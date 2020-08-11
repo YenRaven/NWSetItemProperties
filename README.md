@@ -64,11 +64,13 @@ One last point,  the numeric parts of the variable name template are 0 indexed a
 
 |ITEM_PROPERTY_\*|Prop Suffix|Description|
 |----|----|----|
-|ITEM_PROPERTY_ABILITY_BONUS|\_ABILITY_BONUS|See (IP_CONST_ABILITY_\*)[https://nwnlexicon.com/index.php?title=Ip_const_ability]|
-||\_VALUE| Bonus to add 1 - 12 |
-|ITEM_PROPERTY_AC_BONUS| | |
-|ITEM_PROPERTY_AC_BONUS_VS_ALIGNMENT_GROUP| | |
-|ITEM_PROPERTY_ABILITY_BONUS| | |
+|ITEM_PROPERTY_ABILITY_BONUS|\_ABILITY_BONUS|See [IP_CONST_ABILITY_\*](https://nwnlexicon.com/index.php?title=Ip_const_ability)|
+||\_VALUE| **1 to 12** Bonus to add |
+|ITEM_PROPERTY_AC_BONUS|\_VALUE| **1 to 20** Bonus to add |
+|ITEM_PROPERTY_AC_BONUS_VS_ALIGNMENT_GROUP|\_AC_BONUS_VS_ALIGNMENT_GROUP|See [IP_CONST_ALIGNMENTGROUP_\*](https://nwnlexicon.com/index.php?title=Ip_const_alignmentgroup)|
+||\_VALUE| **1 to 20** Bonus to add |
+|ITEM_PROPERTY_AC_BONUS_VS_DAMAGE_TYPE|\_AC_BONUS_VS_DAMAGE_TYPE|IP_CONST_DAMAGETYPE_\*|
+||\_VALUE| **1 to 20** Bonus to add |
 |ITEM_PROPERTY_AC_BONUS_VS_RACIAL_GROUP| | |
 |ITEM_PROPERTY_AC_BONUS_VS_SPECIFIC_ALIGNMENT| | |
 |ITEM_PROPERTY_ADDITIONAL| | |
