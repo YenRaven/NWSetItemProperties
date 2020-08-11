@@ -2172,7 +2172,7 @@ void RedoSetItemBonuses(object oItem, string sSetItemTagVarName, string sSetTag,
                         oItem,
                         sSetBonusPrefix,
                         limits,
-                        "_VISUALEFFECT"
+                        "_WEIGHT_INCREASE"
                     );
 
                     debug("Adding ITEM_PROPERTY_WEIGHT_INCREASE: " + IntToString(args.iArgOne));
