@@ -6,7 +6,7 @@ Adds a wrapper for the OnPlayerEquipItem and OnPlayerUnEquipItem module event sc
 # Getting Started
 Download the `.nss` files in this repo and add them to your module.
 `set_items_equ.nss` should be added as the `OnPlayerEquipItem` module script.
-'set_items_ueq.nss` should be added as the `OnPlayerUnEquipItem` module script.
+`set_items_ueq.nss` should be added as the `OnPlayerUnEquipItem` module script.
 
 If you use a custom script for either of these events, you will need to update these files to point to your file in the `ExecuteScript` call:
 ```
@@ -46,7 +46,7 @@ So lets add an omnious red glow that will only show up when the user has two ite
 |SET_TAG_0_BONUS_0_TYPE|`string`|ITEM_PROPERTY_LIGHT|
 |SET_TAG_0_BONUS_0_MIN_SET_ITEMS|`int`|2|
 
-This instructs the script to apply the `ITEM_PROPERTY_LIGHT` effect to **this** piece of equipment when 2 or more set items are equiped.  However there are a couple more things we need.  The engine needs to know how bright the light needs to be and what color.  These are special props for this effect type.  Almost all effect types require a set of special props to define the properties of the effect.  These differ for each effect and discripts on how to supply these values can be found below. For `ITEM_PROPERTY_LIGHT` the two speical props are `_LIGHT` and `_COLOR`.  All special props are defeind as ints and will throw an error in your chat window if an int outside the property range is provided.  We want a dim light, witch is value 1, and a red light, witch is value 3.  Adding these our final set of variables should be this.
+This instructs the script to apply the `ITEM_PROPERTY_LIGHT` effect to **this** piece of equipment when 2 or more set items are equiped.  However there are a couple more things we need.  The engine needs to know how bright the light needs to be and what color.  These are special props for this effect type.  Almost all effect types require a set of special props to define the properties of the effect.  These differ for each effect. Information on which effects require which special props can be found below. For `ITEM_PROPERTY_LIGHT` the two speical props are `_LIGHT` and `_COLOR`.  All special props are defeind as ints and will throw an error in your chat window if an int outside the property range is provided.  We want a dim light, witch is value 1, and a red light, witch is value 3.  Adding these, our final set of variables should be this.
 
 |Name|Type|Value|
 |----|----|----|
@@ -56,7 +56,7 @@ This instructs the script to apply the `ITEM_PROPERTY_LIGHT` effect to **this** 
 |SET_TAG_0_BONUS_0_LIGHT|`int`|1|
 |SET_TAG_0_BONUS_0_COLOR|`int`|3|
 
-And thats it!  Now when this item is equiped with another item with the same set tag, an extra property applying a dim red glow will be applied!  And when any item belonging to the set is unequiped brining the set bonus below the min set items for this prop, it will be removed!
+And thats it!  Now when this item is equiped with another item with the same set tag, an extra property applying a dim red glow will be applied!  And when any item belonging to the set is unequiped, bringing the set bonus below the min set items for this prop, it will be removed!
 
 One last point,  the numeric parts of the variable name template are 0 indexed and sequencial so to add the same item to another set, you would use the prefix `SET_TAG_1` or to add a new set bonus `_BONUS_1`.  Combinations of these can be used to setup multi set bonuses and to setup teird bonuses to be applied as a person aquires more and more set items!  Experiment and have fun (and report bugs here on github when you run into them)!
 
