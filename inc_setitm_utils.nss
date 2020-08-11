@@ -268,7 +268,8 @@ string GetItemSetTag(object oItem, int iIdx = 0){
 int iSetTagIndex = 0;
 string getNextSetTag(object oItem)
 {
-    string returnVal = GetItemSetTag(OBJECT_SELF, iSetTagIndex);
+    string returnVal = GetItemSetTag(oItem, iSetTagIndex);
+    trace("iSetTagIndex: " + IntToString(iSetTagIndex));
     iSetTagIndex ++;
     return returnVal;
 }
@@ -335,9 +336,12 @@ struct EquipedItems GetEquipedItems(object oPC)
 int TestItemBelongsToSet(object oItem, string sSetTag)
 {
     string sItemSetTag = getFirstSetTag(oItem);
+    trace(sItemSetTag);
     while(sItemSetTag != ""){
         if(sSetTag == sItemSetTag)
             return TRUE;
+        sItemSetTag = getNextSetTag(oItem);
+        trace(sItemSetTag);
     }
     return FALSE;
 }
@@ -346,58 +350,58 @@ int GetNumberOfSetItemsEquiped(struct EquipedItems equipedItems, string sSetItem
 {
     int iSetItemsEquiped = 0;
     //Check every other item for belonging to the same set
-    if(TestItemBelongsToSet(equipedItems.oArms, sSetTag){
+    if(TestItemBelongsToSet(equipedItems.oArms, sSetTag)){
         iSetItemsEquiped ++;
     }
-    if(TestItemBelongsToSet(equipedItems.oArrows, sSetTag){
+    if(TestItemBelongsToSet(equipedItems.oArrows, sSetTag)){
         iSetItemsEquiped ++;
     }
-    if(TestItemBelongsToSet(equipedItems.oBelt, sSetTag){
+    if(TestItemBelongsToSet(equipedItems.oBelt, sSetTag)){
         iSetItemsEquiped ++;
     }
-    if(TestItemBelongsToSet(equipedItems.oBolts, sSetTag){
+    if(TestItemBelongsToSet(equipedItems.oBolts, sSetTag)){
         iSetItemsEquiped ++;
     }
-    if(TestItemBelongsToSet(equipedItems.oBoots, sSetTag){
+    if(TestItemBelongsToSet(equipedItems.oBoots, sSetTag)){
         iSetItemsEquiped ++;
     }
-    if(TestItemBelongsToSet(equipedItems.oBullets, sSetTag){
+    if(TestItemBelongsToSet(equipedItems.oBullets, sSetTag)){
         iSetItemsEquiped ++;
     }
-    if(TestItemBelongsToSet(equipedItems.oCarmour, sSetTag){
+    if(TestItemBelongsToSet(equipedItems.oCarmour, sSetTag)){
         iSetItemsEquiped ++;
     }
-    if(TestItemBelongsToSet(equipedItems.oChest, sSetTag){
+    if(TestItemBelongsToSet(equipedItems.oChest, sSetTag)){
         iSetItemsEquiped ++;
     }
-    if(TestItemBelongsToSet(equipedItems.oCloak, sSetTag){
+    if(TestItemBelongsToSet(equipedItems.oCloak, sSetTag)){
         iSetItemsEquiped ++;
     }
-    if(TestItemBelongsToSet(equipedItems.oCweaponb, sSetTag){
+    if(TestItemBelongsToSet(equipedItems.oCweaponb, sSetTag)){
         iSetItemsEquiped ++;
     }
-    if(TestItemBelongsToSet(equipedItems.oCweaponl, sSetTag){
+    if(TestItemBelongsToSet(equipedItems.oCweaponl, sSetTag)){
         iSetItemsEquiped ++;
     }
-    if(TestItemBelongsToSet(equipedItems.oCweaponr, sSetTag){
+    if(TestItemBelongsToSet(equipedItems.oCweaponr, sSetTag)){
         iSetItemsEquiped ++;
     }
-    if(TestItemBelongsToSet(equipedItems.oHead, sSetTag){
+    if(TestItemBelongsToSet(equipedItems.oHead, sSetTag)){
         iSetItemsEquiped ++;
     }
-    if(TestItemBelongsToSet(equipedItems.oLefthand, sSetTag){
+    if(TestItemBelongsToSet(equipedItems.oLefthand, sSetTag)){
         iSetItemsEquiped ++;
     }
-    if(TestItemBelongsToSet(equipedItems.oLeftring, sSetTag){
+    if(TestItemBelongsToSet(equipedItems.oLeftring, sSetTag)){
         iSetItemsEquiped ++;
     }
-    if(TestItemBelongsToSet(equipedItems.oNeck, sSetTag){
+    if(TestItemBelongsToSet(equipedItems.oNeck, sSetTag)){
         iSetItemsEquiped ++;
     }
-    if(TestItemBelongsToSet(equipedItems.oRighthand, sSetTag){
+    if(TestItemBelongsToSet(equipedItems.oRighthand, sSetTag)){
         iSetItemsEquiped ++;
     }
-    if(TestItemBelongsToSet(equipedItems.oRightring, sSetTag){
+    if(TestItemBelongsToSet(equipedItems.oRightring, sSetTag)){
         iSetItemsEquiped ++;
     }
     return iSetItemsEquiped;
