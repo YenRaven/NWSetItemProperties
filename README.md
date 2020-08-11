@@ -627,4 +627,4 @@ The following information is auto generated from the code.  Until I can go throu
 #### ITEM_PROPERTY_WEIGHT_INCREASE
 | Special Prop | Range | Description |
 |----|----|----|
-|_VISUALEFFECT|**0 to 5**||
+|_WEIGHT_INCREASE|**0 to 5**||
