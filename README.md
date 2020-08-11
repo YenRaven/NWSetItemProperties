@@ -468,20 +468,20 @@ The following information is auto generated from the code.  Until I can go throu
 |----|----|----|
 |_ON_HIT_PROPERTIES|**0 to 25**||
 |_SAVE_DC|**0 to 6**||
-|_SPECIAL|**0 to **||
+|_SPECIAL|**0 to 255**||
 
 #### ITEM_PROPERTY_ON_MONSTER_HIT
 | Special Prop | Range | Description |
 |----|----|----|
-|_ON_MONSTER_HIT|** to **||
-|_SPECIAL|** to **||
+|_ON_MONSTER_HIT|**0 to 9**||
+|_SPECIAL|**0 to 255**||
 
 
 #### ITEM_PROPERTY_ONHITCASTSPELL
 | Special Prop | Range | Description |
 |----|----|----|
 |_ONHITCASTSPELL|**0 to 140**||
-|_CAST_LEVEL|**0 to **||
+|_CAST_LEVEL|**0 to ??**||
 
 
 #### ITEM_PROPERTY_POISON
