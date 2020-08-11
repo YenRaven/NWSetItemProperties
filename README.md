@@ -62,6 +62,8 @@ One last point,  the numeric parts of the variable name template are 0 indexed a
 
 # Special Properties
 
+The following information is auto generated from the code.  Until I can go through and flush out the various descriptions and such, you can find more info about the special props by going to https://nwnlexicon.com/index.php?title=Item_property and following the link to the various **IP Functions** for the ITEM_PROPERTY you are looking for.
+
 #### ITEM_PROPERTY_ABILITY_BONUS
 | Special Prop | Range | Description |
 |----|----|----|
