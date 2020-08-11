@@ -62,570 +62,567 @@ One last point,  the numeric parts of the variable name template are 0 indexed a
 
 # Special Properties
 
-### ITEM_PROPERTY_ABILITY_BONUS
+#### ITEM_PROPERTY_ABILITY_BONUS
 | Special Prop | Range | Description |
 |----|----|----|
-|_ABILITY_BONUS|** 0 to 5 **||
-|_VALUE|** 1 to 12 **||
+|_ABILITY_BONUS|**0 to 5**||
+|_VALUE|**1 to 12**||
 
 
-### ITEM_PROPERTY_AC_BONUS
+#### ITEM_PROPERTY_AC_BONUS
 | Special Prop | Range | Description |
 |----|----|----|
-|_VALUE|** 1 to 20 **||
+|_VALUE|**1 to 20**||
 
 
 
-### ITEM_PROPERTY_AC_BONUS_VS_ALIGNMENT_GROUP
+#### ITEM_PROPERTY_AC_BONUS_VS_ALIGNMENT_GROUP
 | Special Prop | Range | Description |
 |----|----|----|
-|_AC_BONUS_VS_ALIGNMENT_GROUP|** 0 to 5 **||
-|_VALUE|** 1 to 20 **||
+|_AC_BONUS_VS_ALIGNMENT_GROUP|**0 to 5**||
+|_VALUE|**1 to 20**||
 
 
-### ITEM_PROPERTY_AC_BONUS_VS_DAMAGE_TYPE
+#### ITEM_PROPERTY_AC_BONUS_VS_DAMAGE_TYPE
 | Special Prop | Range | Description |
 |----|----|----|
-|_AC_BONUS_VS_DAMAGE_TYPE|** 0 to 13 **||
-|_VALUE|** 1 to 20 **||
+|_AC_BONUS_VS_DAMAGE_TYPE|**0 to 13**||
+|_VALUE|**1 to 20**||
 
 
-### ITEM_PROPERTY_AC_BONUS_VS_RACIAL_GROUP
+#### ITEM_PROPERTY_AC_BONUS_VS_RACIAL_GROUP
 | Special Prop | Range | Description |
 |----|----|----|
-|_AC_BONUS_VS_RACIAL_GROUP|** 0 to 25 **||
-|_VALUE|** 1 to 20 **||
+|_AC_BONUS_VS_RACIAL_GROUP|**0 to 25**||
+|_VALUE|**1 to 20**||
 
 
-### ITEM_PROPERTY_AC_BONUS_VS_SPECIFIC_ALIGNMENT
+#### ITEM_PROPERTY_AC_BONUS_VS_SPECIFIC_ALIGNMENT
 | Special Prop | Range | Description |
 |----|----|----|
-|_AC_BONUS_VS_SPECIFIC_ALIGNMENT|** 0 to 8 **||
-|_VALUE|** 1 to 20 **||
+|_AC_BONUS_VS_SPECIFIC_ALIGNMENT|**0 to 8**||
+|_VALUE|**1 to 20**||
 
 
-### ITEM_PROPERTY_ADDITIONAL
+#### ITEM_PROPERTY_ADDITIONAL
 | Special Prop | Range | Description |
 |----|----|----|
-|_ADDITIONAL|** 0 to 1 **||
+|_ADDITIONAL|**0 to 1**||
 
 
 
-### ITEM_PROPERTY_ARCANE_SPELL_FAILURE
+#### ITEM_PROPERTY_ARCANE_SPELL_FAILURE
 | Special Prop | Range | Description |
 |----|----|----|
-|_ARCANE_SPELL_FAILURE|** 0 to 19 **||
+|_ARCANE_SPELL_FAILURE|**0 to 19**||
 
 
 
-### ITEM_PROPERTY_ATTACK_BONUS
+#### ITEM_PROPERTY_ATTACK_BONUS
 | Special Prop | Range | Description |
 |----|----|----|
-|_ATTACK_BONUS|** 1 to 20 **||
+|_ATTACK_BONUS|**1 to 20**||
 
 
 
-### ITEM_PROPERTY_ATTACK_BONUS_VS_ALIGNMENT_GROUP
+#### ITEM_PROPERTY_ATTACK_BONUS_VS_ALIGNMENT_GROUP
 | Special Prop | Range | Description |
 |----|----|----|
-|_ATTACK_BONUS_VS_ALIGNMENT_GROUP|** 0 to 5 **||
-|_VALUE|** 1 to 20 **||
+|_ATTACK_BONUS_VS_ALIGNMENT_GROUP|**0 to 5**||
+|_VALUE|**1 to 20**||
 
 
-### ITEM_PROPERTY_ATTACK_BONUS_VS_RACIAL_GROUP
+#### ITEM_PROPERTY_ATTACK_BONUS_VS_RACIAL_GROUP
 | Special Prop | Range | Description |
 |----|----|----|
-|_ATTACK_BONUS_VS_RACIAL_GROUP|** 0 to 25 **||
-|_VALUE|** 1 to 20 **||
+|_ATTACK_BONUS_VS_RACIAL_GROUP|**0 to 25**||
+|_VALUE|**1 to 20**||
 
 
-### ITEM_PROPERTY_ATTACK_BONUS_VS_SPECIFIC_ALIGNMENT
+#### ITEM_PROPERTY_ATTACK_BONUS_VS_SPECIFIC_ALIGNMENT
 | Special Prop | Range | Description |
 |----|----|----|
-|_ATTACK_BONUS_VS_SPECIFIC_ALIGNMENT|** 0 to 8 **||
-|_VALUE|** 1 to 20 **||
+|_ATTACK_BONUS_VS_SPECIFIC_ALIGNMENT|**0 to 8**||
+|_VALUE|**1 to 20**||
 
 
-### ITEM_PROPERTY_BASE_ITEM_WEIGHT_REDUCTION
+#### ITEM_PROPERTY_BASE_ITEM_WEIGHT_REDUCTION
 | Special Prop | Range | Description |
 |----|----|----|
-|_BASE_ITEM_WEIGHT_REDUCTION|** 1 to 5 **||
+|_BASE_ITEM_WEIGHT_REDUCTION|**1 to 5**||
 
 
 
-### ITEM_PROPERTY_BONUS_FEAT
+#### ITEM_PROPERTY_BONUS_FEAT
 | Special Prop | Range | Description |
 |----|----|----|
-|_BONUS_FEAT|** 0 to 62 **||
+|_BONUS_FEAT|**0 to 62**||
 
 
 
-### ITEM_PROPERTY_BONUS_SPELL_SLOT_OF_LEVEL_N
+#### ITEM_PROPERTY_BONUS_SPELL_SLOT_OF_LEVEL_N
 | Special Prop | Range | Description |
 |----|----|----|
-|_CLASS|** 0 to 10 **||
-|_BONUS_SPELL_SLOT_OF_LEVEL_N|** 0 to 9 **||
+|_CLASS|**0 to 10**||
+|_BONUS_SPELL_SLOT_OF_LEVEL_N|**0 to 9**||
 
 
-### ITEM_PROPERTY_CAST_SPELL
+#### ITEM_PROPERTY_CAST_SPELL
 | Special Prop | Range | Description |
 |----|----|----|
-|_CAST_SPELL|** 0 to 410 **||
-|_USES|** 1 to 13 **||
+|_CAST_SPELL|**0 to 410**||
+|_USES|**1 to 13**||
 
 
-### ITEM_PROPERTY_DAMAGE_BONUS
+#### ITEM_PROPERTY_DAMAGE_BONUS
 | Special Prop | Range | Description |
 |----|----|----|
-|_DAMAGE_TYPE|** 0 to 410 **||
-|_DAMAGE_BONUS|** 1 to 13 **||
+|_DAMAGE_TYPE|**0 to 410**||
+|_DAMAGE_BONUS|**1 to 13**||
 
 
-### ITEM_PROPERTY_DAMAGE_BONUS_VS_ALIGNMENT_GROUP
+#### ITEM_PROPERTY_DAMAGE_BONUS_VS_ALIGNMENT_GROUP
 | Special Prop | Range | Description |
 |----|----|----|
-|_DAMAGE_BONUS_VS_ALIGNMENT_GROUP|** 0 to 5 **||
-|_DAMAGE_TYPE|** 0 to 13 **||
-|_DAMAGE_BONUS|** 1 to 20 **||
+|_DAMAGE_BONUS_VS_ALIGNMENT_GROUP|**0 to 5**||
+|_DAMAGE_TYPE|**0 to 13**||
+|_DAMAGE_BONUS|**1 to 20**||
 
-### ITEM_PROPERTY_DAMAGE_BONUS_VS_RACIAL_GROUP
+#### ITEM_PROPERTY_DAMAGE_BONUS_VS_RACIAL_GROUP
 | Special Prop | Range | Description |
 |----|----|----|
-|_DAMAGE_BONUS_VS_RACIAL_GROUP|** 0 to 25 **||
-|_DAMAGE_TYPE|** 0 to 13 **||
-|_DAMAGE_BONUS|** 1 to 20 **||
+|_DAMAGE_BONUS_VS_RACIAL_GROUP|**0 to 25**||
+|_DAMAGE_TYPE|**0 to 13**||
+|_DAMAGE_BONUS|**1 to 20**||
 
-### ITEM_PROPERTY_DAMAGE_BONUS_VS_SPECIFIC_ALIGNMENT
+#### ITEM_PROPERTY_DAMAGE_BONUS_VS_SPECIFIC_ALIGNMENT
 | Special Prop | Range | Description |
 |----|----|----|
-|_DAMAGE_BONUS_VS_SPECIFIC_ALIGNMENT|** 0 to 8 **||
-|_DAMAGE_TYPE|** 0 to 13 **||
-|_DAMAGE_BONUS|** 1 to 20 **||
+|_DAMAGE_BONUS_VS_SPECIFIC_ALIGNMENT|**0 to 8**||
+|_DAMAGE_TYPE|**0 to 13**||
+|_DAMAGE_BONUS|**1 to 20**||
 
-### ITEM_PROPERTY_DAMAGE_REDUCTION
+#### ITEM_PROPERTY_DAMAGE_REDUCTION
 | Special Prop | Range | Description |
 |----|----|----|
-|_DAMAGE_REDUCTION|** 0 to 19 **||
-|_DAMAGE_SOAK|** 1 to 10 **||
+|_DAMAGE_REDUCTION|**0 to 19**||
+|_DAMAGE_SOAK|**1 to 10**||
 
 
-### ITEM_PROPERTY_DAMAGE_RESISTANCE
+#### ITEM_PROPERTY_DAMAGE_RESISTANCE
 | Special Prop | Range | Description |
 |----|----|----|
-|_DAMAGE_TYPE|** 0 to 13 **||
-|_DAMAGE_RESISTANCE|** 1 to 10 **||
+|_DAMAGE_TYPE|**0 to 13**||
+|_DAMAGE_RESISTANCE|**1 to 10**||
 
 
-### ITEM_PROPERTY_DAMAGE_VULNERABILITY
+#### ITEM_PROPERTY_DAMAGE_VULNERABILITY
 | Special Prop | Range | Description |
 |----|----|----|
-|_DAMAGE_TYPE|** 0 to 13 **||
-|_DAMAGE_VULNERABILITY|** 1 to 7 **||
+|_DAMAGE_TYPE|**0 to 13**||
+|_DAMAGE_VULNERABILITY|**1 to 7**||
 
 
-### ITEM_PROPERTY_DARKVISION
+#### ITEM_PROPERTY_DARKVISION
 | Special Prop | Range | Description |
 |----|----|----|
 
 
 
 
-### ITEM_PROPERTY_DECREASED_ABILITY_SCORE
+#### ITEM_PROPERTY_DECREASED_ABILITY_SCORE
 | Special Prop | Range | Description |
 |----|----|----|
-|_DECREASED_ABILITY_SCORE|** 0 to 5 **||
-|_MODIFIER|** 1 to 50 **||
+|_DECREASED_ABILITY_SCORE|**0 to 5**||
+|_MODIFIER|**1 to 50**||
 
 
-### ITEM_PROPERTY_DECREASED_AC
+#### ITEM_PROPERTY_DECREASED_AC
 | Special Prop | Range | Description |
 |----|----|----|
-|_MODIFIER|** 0 to 4 **||
-|_DECREASED_AC|** 1 to 5 **||
+|_MODIFIER|**0 to 4**||
+|_DECREASED_AC|**1 to 5**||
 
 
-### ITEM_PROPERTY_DECREASED_ATTACK_MODIFIER
+#### ITEM_PROPERTY_DECREASED_ATTACK_MODIFIER
 | Special Prop | Range | Description |
 |----|----|----|
-|_DECREASED_ATTACK_MODIFIER|** 1 to 5 **||
+|_DECREASED_ATTACK_MODIFIER|**1 to 5**||
 
 
 
-### ITEM_PROPERTY_DECREASED_DAMAGE
+#### ITEM_PROPERTY_DECREASED_DAMAGE
 | Special Prop | Range | Description |
 |----|----|----|
-|_DECREASED_DAMAGE|** 1 to 5 **||
+|_DECREASED_DAMAGE|**1 to 5**||
 
 
 
-### ITEM_PROPERTY_DECREASED_ENHANCEMENT_MODIFIER
+#### ITEM_PROPERTY_DECREASED_ENHANCEMENT_MODIFIER
 | Special Prop | Range | Description |
 |----|----|----|
-|_DECREASED_ENHANCEMENT_MODIFIER|** 1 to 5 **||
+|_DECREASED_ENHANCEMENT_MODIFIER|**1 to 5**||
 
 
 
-### ITEM_PROPERTY_DECREASED_SAVING_THROWS
+#### ITEM_PROPERTY_DECREASED_SAVING_THROWS
 | Special Prop | Range | Description |
 |----|----|----|
-|_SAVE_VS|** 0 to 15 **||
-|_DECREASED_SAVING_THROWS|** 1 to 20 **||
+|_SAVE_VS|**0 to 15**||
+|_DECREASED_SAVING_THROWS|**1 to 20**||
 
 
-### ITEM_PROPERTY_DECREASED_SAVING_THROWS_SPECIFIC
+#### ITEM_PROPERTY_DECREASED_SAVING_THROWS_SPECIFIC
 | Special Prop | Range | Description |
 |----|----|----|
-|_SAVE_VS|** 0 to 15 **||
-|_DECREASED_SAVING_THROWS_SPECIFIC|** 1 to 20 **||
+|_SAVE_VS|**0 to 15**||
+|_DECREASED_SAVING_THROWS_SPECIFIC|**1 to 20**||
 
 
-### ITEM_PROPERTY_DECREASED_SKILL_MODIFIER
+#### ITEM_PROPERTY_DECREASED_SKILL_MODIFIER
 | Special Prop | Range | Description |
 |----|----|----|
-|_SKILL_MODIFIER|** 0 to 255 **||
-|_DECREASED_SKILL_MODIFIER|** 1 to 50 **||
+|_SKILL_MODIFIER|**0 to 255**||
+|_DECREASED_SKILL_MODIFIER|**1 to 50**||
 
 
-### ITEM_PROPERTY_ENHANCED_CONTAINER_REDUCED_WEIGHT
+#### ITEM_PROPERTY_ENHANCED_CONTAINER_REDUCED_WEIGHT
 | Special Prop | Range | Description |
 |----|----|----|
-|_ENHANCED_CONTAINER_REDUCED_WEIGHT|** 1 to 5 **||
+|_ENHANCED_CONTAINER_REDUCED_WEIGHT|**1 to 5**||
 
 
 
-### ITEM_PROPERTY_ENHANCEMENT_BONUS
+#### ITEM_PROPERTY_ENHANCEMENT_BONUS
 | Special Prop | Range | Description |
 |----|----|----|
-|_ENHANCEMENT_BONUS|** 1 to 20 **||
+|_ENHANCEMENT_BONUS|**1 to 20**||
 
 
 
-### ITEM_PROPERTY_ENHANCEMENT_BONUS_VS_ALIGNMENT_GROUP
+#### ITEM_PROPERTY_ENHANCEMENT_BONUS_VS_ALIGNMENT_GROUP
 | Special Prop | Range | Description |
 |----|----|----|
-|_ENHANCEMENT_BONUS_VS_ALIGNMENT_GROUP|** 0 to 5 **||
-|_VALUE|** 1 to 20 **||
+|_ENHANCEMENT_BONUS_VS_ALIGNMENT_GROUP|**0 to 5**||
+|_VALUE|**1 to 20**||
 
 
-### ITEM_PROPERTY_ENHANCEMENT_BONUS_VS_RACIAL_GROUP
+#### ITEM_PROPERTY_ENHANCEMENT_BONUS_VS_RACIAL_GROUP
 | Special Prop | Range | Description |
 |----|----|----|
-|_ENHANCEMENT_BONUS_VS_RACIAL_GROUP|** 0 to 25 **||
-|_VALUE|** 1 to 20 **||
+|_ENHANCEMENT_BONUS_VS_RACIAL_GROUP|**0 to 25**||
+|_VALUE|**1 to 20**||
 
 
-### ITEM_PROPERTY_ENHANCEMENT_BONUS_VS_SPECIFIC_ALIGNEMENT
+#### ITEM_PROPERTY_ENHANCEMENT_BONUS_VS_SPECIFIC_ALIGNEMENT
 | Special Prop | Range | Description |
 |----|----|----|
-|_ENHANCEMENT_BONUS_VS_SPECIFIC_ALIGNEMENT|** 0 to 8 **||
-|_VALUE|** 1 to 20 **||
+|_ENHANCEMENT_BONUS_VS_SPECIFIC_ALIGNEMENT|**0 to 8**||
+|_VALUE|**1 to 20**||
 
 
-### ITEM_PROPERTY_EXTRA_MELEE_DAMAGE_TYPE
+#### ITEM_PROPERTY_EXTRA_MELEE_DAMAGE_TYPE
 | Special Prop | Range | Description |
 |----|----|----|
-|_EXTRA_MELEE_DAMAGE_TYPE|** 0 to 13 **||
+|_EXTRA_MELEE_DAMAGE_TYPE|**0 to 13**||
 
 
 
-### ITEM_PROPERTY_EXTRA_RANGED_DAMAGE_TYPE
+#### ITEM_PROPERTY_EXTRA_RANGED_DAMAGE_TYPE
 | Special Prop | Range | Description |
 |----|----|----|
-|_EXTRA_RANGED_DAMAGE_TYPE|** 0 to 13 **||
+|_EXTRA_RANGED_DAMAGE_TYPE|**0 to 13**||
 
 
 
-### ITEM_PROPERTY_FREEDOM_OF_MOVEMENT
+#### ITEM_PROPERTY_FREEDOM_OF_MOVEMENT
 | Special Prop | Range | Description |
 |----|----|----|
 
 
 
 
-### ITEM_PROPERTY_HASTE
+#### ITEM_PROPERTY_HASTE
 | Special Prop | Range | Description |
 |----|----|----|
 
 
 
 
-### ITEM_PROPERTY_HEALERS_KIT
+#### ITEM_PROPERTY_HEALERS_KIT
 | Special Prop | Range | Description |
 |----|----|----|
-|_HEALERS_KIT|** 1 to 12 **||
+|_HEALERS_KIT|**1 to 12**||
 
 
 
-### ITEM_PROPERTY_HOLY_AVENGER
+#### ITEM_PROPERTY_HOLY_AVENGER
 | Special Prop | Range | Description |
 |----|----|----|
 
 
 
 
-### ITEM_PROPERTY_IMMUNITY_DAMAGE_TYPE
+#### ITEM_PROPERTY_IMMUNITY_DAMAGE_TYPE
 | Special Prop | Range | Description |
 |----|----|----|
-|_IMMUNITY_DAMAGE_TYPE|** 0 to 13 **||
-|_IMMUNE_BONUS|** 1 to 7 **||
+|_IMMUNITY_DAMAGE_TYPE|**0 to 13**||
+|_IMMUNE_BONUS|**1 to 7**||
 
 
-### ITEM_PROPERTY_IMMUNITY_MISCELLANEOUS
+#### ITEM_PROPERTY_IMMUNITY_MISCELLANEOUS
 | Special Prop | Range | Description |
 |----|----|----|
-|_IMMUNITY_MISCELLANEOUS|** 0 to 9 **||
+|_IMMUNITY_MISCELLANEOUS|**0 to 9**||
 
 
 
-### ITEM_PROPERTY_IMMUNITY_SPECIFIC_SPELL
+#### ITEM_PROPERTY_IMMUNITY_SPECIFIC_SPELL
 | Special Prop | Range | Description |
 |----|----|----|
-|_IMMUNITY_SPECIFIC_SPELL|** 0 to 187 **||
+|_IMMUNITY_SPECIFIC_SPELL|**0 to 187**||
 
 
 
-### ITEM_PROPERTY_IMMUNITY_SPELL_SCHOOL
+#### ITEM_PROPERTY_IMMUNITY_SPELL_SCHOOL
 | Special Prop | Range | Description |
 |----|----|----|
-|_IMMUNITY_SPELL_SCHOOL|** 0 to 7 **||
+|_IMMUNITY_SPELL_SCHOOL|**0 to 7**||
 
 
 
-### ITEM_PROPERTY_IMMUNITY_SPELLS_BY_LEVEL
+#### ITEM_PROPERTY_IMMUNITY_SPELLS_BY_LEVEL
 | Special Prop | Range | Description |
 |----|----|----|
-|_IMMUNITY_SPELLS_BY_LEVEL|** 1 to 9 **||
+|_IMMUNITY_SPELLS_BY_LEVEL|**1 to 9**||
 
 
 
-### ITEM_PROPERTY_IMPROVED_EVASION
+#### ITEM_PROPERTY_IMPROVED_EVASION
 | Special Prop | Range | Description |
 |----|----|----|
 
 
 
 
-### ITEM_PROPERTY_KEEN
+#### ITEM_PROPERTY_KEEN
 | Special Prop | Range | Description |
 |----|----|----|
 
 
 
 
-### ITEM_PROPERTY_LIGHT
+#### ITEM_PROPERTY_LIGHT
 | Special Prop | Range | Description |
 |----|----|----|
-|_LIGHT|** 1 to 4 **||
-|_COLOR|** 0 to 6 **||
+|_LIGHT|**1 to 4**||
+|_COLOR|**0 to 6**||
 
 
-### ITEM_PROPERTY_MASSIVE_CRITICALS
+#### ITEM_PROPERTY_MASSIVE_CRITICALS
 | Special Prop | Range | Description |
 |----|----|----|
-|_MASSIVE_CRITICALS|** 1 to 20 **||
+|_MASSIVE_CRITICALS|**1 to 20**||
 
 
 
-### ITEM_PROPERTY_MATERIAL
+#### ITEM_PROPERTY_MATERIAL
 | Special Prop | Range | Description |
 |----|----|----|
-|_MATERIAL|** 0 to 77 **||
+|_MATERIAL|**0 to 77**||
 
 
 
-### ITEM_PROPERTY_MIGHTY
+#### ITEM_PROPERTY_MIGHTY
 | Special Prop | Range | Description |
 |----|----|----|
-|_MIGHTY|** 1 to 20 **||
+|_MIGHTY|**1 to 20**||
 
 
 
-### ITEM_PROPERTY_MIND_BLANK
+#### ITEM_PROPERTY_MIND_BLANK
 | Special Prop | Range | Description |
 |----|----|----|
 
 
 
 
-### ITEM_PROPERTY_MONSTER_DAMAGE
+#### ITEM_PROPERTY_MONSTER_DAMAGE
 | Special Prop | Range | Description |
 |----|----|----|
-|_MONSTER_DAMAGE|** 1 to 57 **||
+|_MONSTER_DAMAGE|**1 to 57**||
 
 
 
-### ITEM_PROPERTY_NO_DAMAGE
+#### ITEM_PROPERTY_NO_DAMAGE
 | Special Prop | Range | Description |
 |----|----|----|
 
 
 
 
-### ITEM_PROPERTY_ON_HIT_PROPERTIES
+#### ITEM_PROPERTY_ON_HIT_PROPERTIES
 | Special Prop | Range | Description |
 |----|----|----|
-|_ON_HIT_PROPERTIES|** 0 to 25 **||
-|_SAVE_DC|** 0 to 6 **||
-|_SPECIAL|** 0 to  **||
+|_ON_HIT_PROPERTIES|**0 to 25**||
+|_SAVE_DC|**0 to 6**||
+|_SPECIAL|**0 to **||
 
-### ITEM_PROPERTY_ON_MONSTER_HIT
+#### ITEM_PROPERTY_ON_MONSTER_HIT
 | Special Prop | Range | Description |
 |----|----|----|
-|_ON_MONSTER_HIT|**  to  **||
-|_SPECIAL|**  to  **||
+|_ON_MONSTER_HIT|** to **||
+|_SPECIAL|** to **||
 
 
-### ITEM_PROPERTY_ONHITCASTSPELL
+#### ITEM_PROPERTY_ONHITCASTSPELL
 | Special Prop | Range | Description |
 |----|----|----|
-|_ONHITCASTSPELL|** 0 to 140 **||
-|_CAST_LEVEL|** 0 to  **||
+|_ONHITCASTSPELL|**0 to 140**||
+|_CAST_LEVEL|**0 to **||
 
 
-### ITEM_PROPERTY_POISON
+#### ITEM_PROPERTY_POISON
 | Special Prop | Range | Description |
 |----|----|----|
 
 
 
 
-### ITEM_PROPERTY_QUALITY
+#### ITEM_PROPERTY_QUALITY
 | Special Prop | Range | Description |
 |----|----|----|
-|_QUALITY|** 0 to 15 **||
+|_QUALITY|**0 to 15**||
 
 
 
-### ITEM_PROPERTY_REGENERATION
+#### ITEM_PROPERTY_REGENERATION
 | Special Prop | Range | Description |
 |----|----|----|
-|_REGENERATION|** 1 to 20 **||
+|_REGENERATION|**1 to 20**||
 
 
 
-### ITEM_PROPERTY_REGENERATION_VAMPIRIC
+#### ITEM_PROPERTY_REGENERATION_VAMPIRIC
 | Special Prop | Range | Description |
 |----|----|----|
-|_REGENERATION_VAMPIRIC|** 1 to 20 **||
+|_REGENERATION_VAMPIRIC|**1 to 20**||
 
 
 
-### ITEM_PROPERTY_SAVING_THROW_BONUS
+#### ITEM_PROPERTY_SAVING_THROW_BONUS
 | Special Prop | Range | Description |
 |----|----|----|
-|_SAVE_VS|** 0 to 15 **||
-|_SAVING_THROW_BONUS|** 1 to 20 **||
+|_SAVE_VS|**0 to 15**||
+|_SAVING_THROW_BONUS|**1 to 20**||
 
 
-### ITEM_PROPERTY_SAVING_THROW_BONUS_SPECIFIC
+#### ITEM_PROPERTY_SAVING_THROW_BONUS_SPECIFIC
 | Special Prop | Range | Description |
 |----|----|----|
-|_SAVING_THROW_BONUS_SPECIFIC|** 1 to 3 **||
-|_SAVING_THROW_BONUS|** 1 to 20 **||
+|_SAVING_THROW_BONUS_SPECIFIC|**1 to 3**||
+|_SAVING_THROW_BONUS|**1 to 20**||
 
 
-### ITEM_PROPERTY_SKILL_BONUS
+#### ITEM_PROPERTY_SKILL_BONUS
 | Special Prop | Range | Description |
 |----|----|----|
-|_SKILL_BONUS|** 0 to 255 **||
-|_VALUE|** 1 to 50 **||
+|_SKILL_BONUS|**0 to 255**||
+|_VALUE|**1 to 50**||
 
 
-### ITEM_PROPERTY_SPECIAL_WALK
+#### ITEM_PROPERTY_SPECIAL_WALK
 | Special Prop | Range | Description |
 |----|----|----|
-|_SPECIAL_WALK|** 0 to 0 **||
+|_SPECIAL_WALK|**0 to 0**||
 
 
 
-### ITEM_PROPERTY_SPELL_RESISTANCE
+#### ITEM_PROPERTY_SPELL_RESISTANCE
 | Special Prop | Range | Description |
 |----|----|----|
-|_SPELL_RESISTANCE|** 0 to 11 **||
+|_SPELL_RESISTANCE|**0 to 11**||
 
 
 
-### ITEM_PROPERTY_THIEVES_TOOLS
+#### ITEM_PROPERTY_THIEVES_TOOLS
 | Special Prop | Range | Description |
 |----|----|----|
-|_THIEVES_TOOLS|** 1 to 12 **||
+|_THIEVES_TOOLS|**1 to 12**||
 
 
 
-### ITEM_PROPERTY_TRAP
+#### ITEM_PROPERTY_TRAP
 | Special Prop | Range | Description |
 |----|----|----|
-|_VALUE|** 0 to 3 **||
-|_TRAP|** 1 to 11 **||
+|_VALUE|**0 to 3**||
+|_TRAP|**1 to 11**||
 
 
-### ITEM_PROPERTY_TRUE_SEEING
+#### ITEM_PROPERTY_TRUE_SEEING
 | Special Prop | Range | Description |
 |----|----|----|
 
 
 
 
-### ITEM_PROPERTY_TURN_RESISTANCE
+#### ITEM_PROPERTY_TURN_RESISTANCE
 | Special Prop | Range | Description |
 |----|----|----|
-|_TURN_RESISTANCE|** 1 to 50 **||
+|_TURN_RESISTANCE|**1 to 50**||
 
 
 
-### ITEM_PROPERTY_UNLIMITED_AMMUNITION
+#### ITEM_PROPERTY_UNLIMITED_AMMUNITION
 | Special Prop | Range | Description |
 |----|----|----|
-|_UNLIMITED_AMMUNITION|** 1 to 15 **||
+|_UNLIMITED_AMMUNITION|**1 to 15**||
 
 
 
-### ITEM_PROPERTY_USE_LIMITATION_ALIGNMENT_GROUP
+#### ITEM_PROPERTY_USE_LIMITATION_ALIGNMENT_GROUP
 | Special Prop | Range | Description |
 |----|----|----|
-|_USE_LIMITATION_ALIGNMENT_GROUP|** 0 to 5 **||
+|_USE_LIMITATION_ALIGNMENT_GROUP|**0 to 5**||
 
 
 
-### ITEM_PROPERTY_USE_LIMITATION_CLASS
+#### ITEM_PROPERTY_USE_LIMITATION_CLASS
 | Special Prop | Range | Description |
 |----|----|----|
-|_USE_LIMITATION_CLASS|** 0 to 10 **||
+|_USE_LIMITATION_CLASS|**0 to 10**||
 
 
 
-### ITEM_PROPERTY_USE_LIMITATION_RACIAL_TYPE
+#### ITEM_PROPERTY_USE_LIMITATION_RACIAL_TYPE
 | Special Prop | Range | Description |
 |----|----|----|
-|_USE_LIMITATION_RACIAL_TYPE|** 0 to 25 **||
+|_USE_LIMITATION_RACIAL_TYPE|**0 to 25**||
 
 
 
-### ITEM_PROPERTY_USE_LIMITATION_SPECIFIC_ALIGNMENT
+#### ITEM_PROPERTY_USE_LIMITATION_SPECIFIC_ALIGNMENT
 | Special Prop | Range | Description |
 |----|----|----|
-|_USE_LIMITATION_SPECIFIC_ALIGNMENT|** 0 to 8 **||
+|_USE_LIMITATION_SPECIFIC_ALIGNMENT|**0 to 8**||
 
 
 
-### ITEM_PROPERTY_USE_LIMITATION_TILESET
+#### ITEM_PROPERTY_USE_LIMITATION_TILESET
 | Special Prop | Range | Description |
 |----|----|----|
 
 
 
 
-### ITEM_PROPERTY_VISUALEFFECT
+#### ITEM_PROPERTY_VISUALEFFECT
 | Special Prop | Range | Description |
 |----|----|----|
-|_VISUALEFFECT|** 0 to 6 **||
+|_VISUALEFFECT|**0 to 6**||
 
 
 
-### ITEM_PROPERTY_WEIGHT_INCREASE
+#### ITEM_PROPERTY_WEIGHT_INCREASE
 | Special Prop | Range | Description |
 |----|----|----|
-|_VISUALEFFECT|** 0 to 5 **||
-
-
-
+|_VISUALEFFECT|**0 to 5**||
