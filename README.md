@@ -178,50 +178,50 @@ The following information is auto generated from the code.  Until I can go throu
 #### ITEM_PROPERTY_DAMAGE_BONUS
 | Special Prop | Range | Description |
 |----|----|----|
-|_DAMAGE_TYPE|**0 to 13**||
-|_DAMAGE_BONUS|**1 to 20**||
+|_DAMAGE_TYPE|**0 to 13**|[See IP_CONST_DAMAGETYPE_*](https://nwnlexicon.com/index.php?title=Ip_const_damagetype) for possible *values*|
+|_DAMAGE_BONUS|**1 to 20**|[See IP_CONST_DAMAGEBONUS_*](https://nwnlexicon.com/index.php?title=Ip_const_damagebonus) for possible *values*|
 
 
 #### ITEM_PROPERTY_DAMAGE_BONUS_VS_ALIGNMENT_GROUP
 | Special Prop | Range | Description |
 |----|----|----|
-|_DAMAGE_BONUS_VS_ALIGNMENT_GROUP|**0 to 5**||
-|_DAMAGE_TYPE|**0 to 13**||
-|_DAMAGE_BONUS|**1 to 20**||
+|_DAMAGE_BONUS_VS_ALIGNMENT_GROUP|**0 to 5**|[See IP_CONST_ALIGNMENTGROUP_*](https://nwnlexicon.com/index.php?title=Ip_const_alignmentgroup) for possible *values*|
+|_DAMAGE_TYPE|**0 to 13**|[See IP_CONST_DAMAGETYPE_*](https://nwnlexicon.com/index.php?title=Ip_const_damagetype) for possible *values*|
+|_DAMAGE_BONUS|**1 to 20**|[See IP_CONST_DAMAGEBONUS_*](https://nwnlexicon.com/index.php?title=Ip_const_damagebonus) for possible *values*|
 
 #### ITEM_PROPERTY_DAMAGE_BONUS_VS_RACIAL_GROUP
 | Special Prop | Range | Description |
 |----|----|----|
-|_DAMAGE_BONUS_VS_RACIAL_GROUP|**0 to 25**||
-|_DAMAGE_TYPE|**0 to 13**||
-|_DAMAGE_BONUS|**1 to 20**||
+|_DAMAGE_BONUS_VS_RACIAL_GROUP|**0 to 25**|[See IP_CONST_RACIALTYPE_*](https://nwnlexicon.com/index.php?title=Ip_const_racialtype) for possible *values*|
+|_DAMAGE_TYPE|**0 to 13**|[See IP_CONST_DAMAGETYPE_*](https://nwnlexicon.com/index.php?title=Ip_const_damagetype) for possible *values*|
+|_DAMAGE_BONUS|**1 to 20**|[See IP_CONST_DAMAGEBONUS_*](https://nwnlexicon.com/index.php?title=Ip_const_damagebonus) for possible *values*|
 
 #### ITEM_PROPERTY_DAMAGE_BONUS_VS_SPECIFIC_ALIGNMENT
 | Special Prop | Range | Description |
 |----|----|----|
-|_DAMAGE_BONUS_VS_SPECIFIC_ALIGNMENT|**0 to 8**||
-|_DAMAGE_TYPE|**0 to 13**||
-|_DAMAGE_BONUS|**1 to 20**||
+|_DAMAGE_BONUS_VS_SPECIFIC_ALIGNMENT|**0 to 8**|[See IP_CONST_ALIGNMENT_*](https://nwnlexicon.com/index.php?title=Ip_const_alignment) for possible *values*|
+|_DAMAGE_TYPE|**0 to 13**|[See IP_CONST_DAMAGETYPE_*](https://nwnlexicon.com/index.php?title=Ip_const_damagetype) for possible *values*|
+|_DAMAGE_BONUS|**1 to 20**|[See IP_CONST_DAMAGEBONUS_*](https://nwnlexicon.com/index.php?title=Ip_const_damagebonus) for possible *values*|
 
 #### ITEM_PROPERTY_DAMAGE_REDUCTION
 | Special Prop | Range | Description |
 |----|----|----|
-|_DAMAGE_REDUCTION|**0 to 19**||
-|_DAMAGE_SOAK|**1 to 10**||
+|_DAMAGE_REDUCTION|**0 to 19**|[See IP_CONST_DAMAGEREDUCTION_*](https://nwnlexicon.com/index.php?title=Ip_const_damagereduction) for possible *values*|
+|_DAMAGE_SOAK|**1 to 10**|[See IP_CONST_DAMAGESOAK_*](https://nwnlexicon.com/index.php?title=Ip_const_damagesoak) for possible *values*|
 
 
 #### ITEM_PROPERTY_DAMAGE_RESISTANCE
 | Special Prop | Range | Description |
 |----|----|----|
-|_DAMAGE_TYPE|**0 to 13**||
-|_DAMAGE_RESISTANCE|**1 to 10**||
+|_DAMAGE_TYPE|**0 to 13**|[See IP_CONST_DAMAGETYPE_*](https://nwnlexicon.com/index.php?title=Ip_const_damagetype) for possible *values*|
+|_DAMAGE_RESISTANCE|**1 to 10**|[See IP_CONST_DAMAGERESIST_**](https://nwnlexicon.com/index.php?title=Ip_const_damageresist) for possible *values*|
 
 
 #### ITEM_PROPERTY_DAMAGE_VULNERABILITY
 | Special Prop | Range | Description |
 |----|----|----|
-|_DAMAGE_TYPE|**0 to 13**||
-|_DAMAGE_VULNERABILITY|**1 to 7**||
+|_DAMAGE_TYPE|**0 to 13**|[See IP_CONST_DAMAGETYPE_*](https://nwnlexicon.com/index.php?title=Ip_const_damagetype) for possible *values*|
+|_DAMAGE_VULNERABILITY|**1 to 7**|[See IP_CONST_DAMAGEVULNERABILITY_*](https://nwnlexicon.com/index.php?title=Ip_const_damagevulnerability) for possible *values*|
 
 
 #### ITEM_PROPERTY_DARKVISION
@@ -234,105 +234,105 @@ The following information is auto generated from the code.  Until I can go throu
 #### ITEM_PROPERTY_DECREASED_ABILITY_SCORE
 | Special Prop | Range | Description |
 |----|----|----|
-|_DECREASED_ABILITY_SCORE|**0 to 5**||
-|_MODIFIER|**1 to 50**||
+|_DECREASED_ABILITY_SCORE|**0 to 5**|[See IP_CONST_ABILITY_*](https://nwnlexicon.com/index.php?title=Ip_const_ability) for possible *values*|
+|_MODIFIER|**1 to 50**|Amount to decrease by|
 
 
 #### ITEM_PROPERTY_DECREASED_AC
 | Special Prop | Range | Description |
 |----|----|----|
-|_MODIFIER|**0 to 4**||
-|_DECREASED_AC|**1 to 5**||
+|_MODIFIER|**0 to 4**|[See IP_CONST_ACMODIFIERTYPE_*](https://nwnlexicon.com/index.php?title=Ip_const_acmodifiertype) for possible *values*|
+|_DECREASED_AC|**1 to 5**|Decrease AC by how much.|
 
 
 #### ITEM_PROPERTY_DECREASED_ATTACK_MODIFIER
 | Special Prop | Range | Description |
 |----|----|----|
-|_DECREASED_ATTACK_MODIFIER|**1 to 5**||
+|_DECREASED_ATTACK_MODIFIER|**1 to 5**|Attack penalty|
 
 
 
 #### ITEM_PROPERTY_DECREASED_DAMAGE
 | Special Prop | Range | Description |
 |----|----|----|
-|_DECREASED_DAMAGE|**1 to 5**||
+|_DECREASED_DAMAGE|**1 to 5**|Damage penalty|
 
 
 
 #### ITEM_PROPERTY_DECREASED_ENHANCEMENT_MODIFIER
 | Special Prop | Range | Description |
 |----|----|----|
-|_DECREASED_ENHANCEMENT_MODIFIER|**1 to 5**||
+|_DECREASED_ENHANCEMENT_MODIFIER|**1 to 5**|Amount of penalty to apply to weapon|
 
 
 
 #### ITEM_PROPERTY_DECREASED_SAVING_THROWS
 | Special Prop | Range | Description |
 |----|----|----|
-|_SAVE_VS|**0 to 15**||
-|_DECREASED_SAVING_THROWS|**1 to 20**||
+|_SAVE_VS|**0 to 15**|[See IP_CONST_SAVEVS_*](https://nwnlexicon.com/index.php?title=Ip_const_savevs) for possible *values*|
+|_DECREASED_SAVING_THROWS|**1 to 20**|Reduce by how much|
 
 
 #### ITEM_PROPERTY_DECREASED_SAVING_THROWS_SPECIFIC
 | Special Prop | Range | Description |
 |----|----|----|
-|_SAVE_VS|**0 to 15**||
-|_DECREASED_SAVING_THROWS_SPECIFIC|**1 to 20**||
+|_SAVE_VS|**0 to 15**|[See IP_CONST_SAVEBASETYPE_*](https://nwnlexicon.com/index.php?title=Ip_const_savebasetype) for possible *values*|
+|_DECREASED_SAVING_THROWS_SPECIFIC|**1 to 20**|Reduce saving throw by this|
 
 
 #### ITEM_PROPERTY_DECREASED_SKILL_MODIFIER
 | Special Prop | Range | Description |
 |----|----|----|
-|_SKILL_MODIFIER|**0 to 255**||
-|_DECREASED_SKILL_MODIFIER|**1 to 50**||
+|_SKILL_MODIFIER|**0 to 255**|[See SKILL_*](https://nwnlexicon.com/index.php?title=Skill) for possible *values*|
+|_DECREASED_SKILL_MODIFIER|**1 to 50**|Amount of ability to reduce skill|
 
 
 #### ITEM_PROPERTY_ENHANCED_CONTAINER_REDUCED_WEIGHT
 | Special Prop | Range | Description |
 |----|----|----|
-|_ENHANCED_CONTAINER_REDUCED_WEIGHT|**1 to 5**||
+|_ENHANCED_CONTAINER_REDUCED_WEIGHT|**1 to 5**|[See IP_CONST_CONTAINERWEIGHTRED_*](https://nwnlexicon.com/index.php?title=Ip_const_containerweightred) for possible *values*|
 
 
 
 #### ITEM_PROPERTY_ENHANCEMENT_BONUS
 | Special Prop | Range | Description |
 |----|----|----|
-|_ENHANCEMENT_BONUS|**1 to 20**||
+|_ENHANCEMENT_BONUS|**1 to 20**|How much to enhance weapon|
 
 
 
 #### ITEM_PROPERTY_ENHANCEMENT_BONUS_VS_ALIGNMENT_GROUP
 | Special Prop | Range | Description |
 |----|----|----|
-|_ENHANCEMENT_BONUS_VS_ALIGNMENT_GROUP|**0 to 5**||
-|_VALUE|**1 to 20**||
+|_ENHANCEMENT_BONUS_VS_ALIGNMENT_GROUP|**0 to 5**|[See IP_CONST_ALIGNMENTGROUP_*](https://nwnlexicon.com/index.php?title=Ip_const_alignmentgroup) for possible *values*|
+|_VALUE|**1 to 20**|How much to enhance weapon|
 
 
 #### ITEM_PROPERTY_ENHANCEMENT_BONUS_VS_RACIAL_GROUP
 | Special Prop | Range | Description |
 |----|----|----|
-|_ENHANCEMENT_BONUS_VS_RACIAL_GROUP|**0 to 25**||
-|_VALUE|**1 to 20**||
+|_ENHANCEMENT_BONUS_VS_RACIAL_GROUP|**0 to 25**|[See IP_CONST_RACIALTYPE_*](https://nwnlexicon.com/index.php?title=Ip_const_racialtype) for possible *values*|
+|_VALUE|**1 to 20**|How much to enhance weapon|
 
 
 #### ITEM_PROPERTY_ENHANCEMENT_BONUS_VS_SPECIFIC_ALIGNEMENT
 | Special Prop | Range | Description |
 |----|----|----|
-|_ENHANCEMENT_BONUS_VS_SPECIFIC_ALIGNEMENT|**0 to 8**||
-|_VALUE|**1 to 20**||
+|_ENHANCEMENT_BONUS_VS_SPECIFIC_ALIGNEMENT|**0 to 8**|[See IP_CONST_ALIGNMENT_*](https://nwnlexicon.com/index.php?title=Ip_const_alignment) for possible *values*|
+|_VALUE|**1 to 20**|How much to enhance weapon|
 
 
 #### ITEM_PROPERTY_EXTRA_MELEE_DAMAGE_TYPE
 | Special Prop | Range | Description |
 |----|----|----|
-|_EXTRA_MELEE_DAMAGE_TYPE|**0 to 13**||
+|_EXTRA_MELEE_DAMAGE_TYPE|**0 to 13**|[See IP_CONST_DAMAGETYPE_*](https://nwnlexicon.com/index.php?title=Ip_const_damagetype) for possible *values*|
 
 
 
 #### ITEM_PROPERTY_EXTRA_RANGED_DAMAGE_TYPE
 | Special Prop | Range | Description |
 |----|----|----|
-|_EXTRA_RANGED_DAMAGE_TYPE|**0 to 13**||
+|_EXTRA_RANGED_DAMAGE_TYPE|**0 to 13**|[See IP_CONST_DAMAGETYPE_*](https://nwnlexicon.com/index.php?title=Ip_const_damagetype) for possible *values*|
 
 
 
@@ -367,35 +367,35 @@ The following information is auto generated from the code.  Until I can go throu
 #### ITEM_PROPERTY_IMMUNITY_DAMAGE_TYPE
 | Special Prop | Range | Description |
 |----|----|----|
-|_IMMUNITY_DAMAGE_TYPE|**0 to 13**||
-|_IMMUNE_BONUS|**1 to 7**||
+|_IMMUNITY_DAMAGE_TYPE|**0 to 13**|[See IP_CONST_DAMAGETYPE_*](https://nwnlexicon.com/index.php?title=Ip_const_damagetype) for possible *values*|
+|_IMMUNE_BONUS|**1 to 7**|[See IP_CONST_DAMAGEIMMUNITY_*](https://nwnlexicon.com/index.php?title=Ip_const_damageimmunity) for possible *values*|
 
 
 #### ITEM_PROPERTY_IMMUNITY_MISCELLANEOUS
 | Special Prop | Range | Description |
 |----|----|----|
-|_IMMUNITY_MISCELLANEOUS|**0 to 9**||
+|_IMMUNITY_MISCELLANEOUS|**0 to 9**|[See IP_CONST_IMMUNITYMISC_*](https://nwnlexicon.com/index.php?title=Ip_const_immunitymisc) for possible *values*|
 
 
 
 #### ITEM_PROPERTY_IMMUNITY_SPECIFIC_SPELL
 | Special Prop | Range | Description |
 |----|----|----|
-|_IMMUNITY_SPECIFIC_SPELL|**0 to 187**||
+|_IMMUNITY_SPECIFIC_SPELL|**0 to 187**|[See IP_CONST_IMMUNITYSPELL_*](https://nwnlexicon.com/index.php?title=Ip_const_immunityspell) for possible *values*|
 
 
 
 #### ITEM_PROPERTY_IMMUNITY_SPELL_SCHOOL
 | Special Prop | Range | Description |
 |----|----|----|
-|_IMMUNITY_SPELL_SCHOOL|**0 to 7**||
+|_IMMUNITY_SPELL_SCHOOL|**0 to 7**|[See IP_CONST_SPELLSCHOOL_*](https://nwnlexicon.com/index.php?title=Ip_const_spellschool) for possible *values*|
 
 
 
 #### ITEM_PROPERTY_IMMUNITY_SPELLS_BY_LEVEL
 | Special Prop | Range | Description |
 |----|----|----|
-|_IMMUNITY_SPELLS_BY_LEVEL|**1 to 9**||
+|_IMMUNITY_SPELLS_BY_LEVEL|**1 to 9**|Immune to this level and below|
 
 
 
@@ -416,32 +416,33 @@ The following information is auto generated from the code.  Until I can go throu
 #### ITEM_PROPERTY_LIGHT
 | Special Prop | Range | Description |
 |----|----|----|
-|_LIGHT|**1 to 4**||
-|_COLOR|**0 to 6**||
+|_LIGHT|**1 to 4**|[See IP_CONST_LIGHTBRIGHTNESS_*](https://nwnlexicon.com/index.php?title=Ip_const_lightbrightness) for possible *values*|
+|_COLOR|**0 to 6**|[See IP_CONST_LIGHTCOLOR_*](https://nwnlexicon.com/index.php?title=Ip_const_lightcolor) for possible *values*|
 
 
 #### ITEM_PROPERTY_MASSIVE_CRITICALS
 | Special Prop | Range | Description |
 |----|----|----|
-|_MASSIVE_CRITICALS|**1 to 20**||
+|_MASSIVE_CRITICALS|**1 to 20**|[See IP_CONST_DAMAGEBONUS_*](https://nwnlexicon.com/index.php?title=Ip_const_damagebonus) for possible *values*|
 
 
 
 #### ITEM_PROPERTY_MATERIAL
 | Special Prop | Range | Description |
 |----|----|----|
-|_MATERIAL|**0 to 77**||
+|_MATERIAL|**0 to 77**|[See ItemPropertyMaterial](https://nwnlexicon.com/index.php?title=ItemPropertyMaterial#Known_Bugs:) for information on this value.|
 
 
 
 #### ITEM_PROPERTY_MIGHTY
 | Special Prop | Range | Description |
 |----|----|----|
-|_MIGHTY|**1 to 20**||
+|_MIGHTY|**1 to 20**|Maximum allowed strength modifier|
 
 
 
 #### ITEM_PROPERTY_MIND_BLANK
+This property is missing it's constructor and thus is unavailabe via this toolset at this time.
 | Special Prop | Range | Description |
 |----|----|----|
 
@@ -451,7 +452,7 @@ The following information is auto generated from the code.  Until I can go throu
 #### ITEM_PROPERTY_MONSTER_DAMAGE
 | Special Prop | Range | Description |
 |----|----|----|
-|_MONSTER_DAMAGE|**1 to 57**||
+|_MONSTER_DAMAGE|**1 to 57**|[See IP_CONST_MONSTERDAMAGE_*](https://nwnlexicon.com/index.php?title=Ip_const_monsterdamage) for possible *values*|
 
 
 
@@ -465,25 +466,27 @@ The following information is auto generated from the code.  Until I can go throu
 #### ITEM_PROPERTY_ON_HIT_PROPERTIES
 | Special Prop | Range | Description |
 |----|----|----|
-|_ON_HIT_PROPERTIES|**0 to 25**||
-|_SAVE_DC|**0 to 6**||
-|_SPECIAL|**0 to 255**||
+|_ON_HIT_PROPERTIES|**0 to 25**|[See IP_CONST_ONHIT_*](https://nwnlexicon.com/index.php?title=Ip_const_onhit) for possible *values*|
+|_SAVE_DC|**0 to 6**|[See IP_CONST_ONHIT_SAVEDC_*](https://nwnlexicon.com/index.php?title=Ip_const_onhit_savedc) for possible *values*|
+|_SPECIAL|**0 to 255**|[See ItemPropertyOnHitProps](https://nwnlexicon.com/index.php?title=ItemPropertyOnHitProps#Description) for details on this property.|
 
 #### ITEM_PROPERTY_ON_MONSTER_HIT
+This property has know bugs in it's constructor.  [See ItemPropertyOnMonsterHitProperties](https://nwnlexicon.com/index.php?title=ItemPropertyOnMonsterHitProperties) for more information.
 | Special Prop | Range | Description |
 |----|----|----|
-|_ON_MONSTER_HIT|**0 to 9**||
-|_SPECIAL|**0 to 255**||
+|_ON_MONSTER_HIT|**0 to 9**|[See IP_CONST_ONMONSTERHIT_*](https://nwnlexicon.com/index.php?title=Ip_const_onmonsterhit) for possible *values*|
+|_SPECIAL|**0 to 255**|[See ItemPropertyOnMonsterHitProperties](https://nwnlexicon.com/index.php?title=ItemPropertyOnMonsterHitProperties) for more information.|
 
 
 #### ITEM_PROPERTY_ONHITCASTSPELL
 | Special Prop | Range | Description |
 |----|----|----|
-|_ONHITCASTSPELL|**0 to 140**||
-|_CAST_LEVEL|**0 to ??**||
+|_ONHITCASTSPELL|**0 to 140**|[See IP_CONST_ONHIT_CASTSPELL_*](https://nwnlexicon.com/index.php?title=Ip_const_onhit_castspell) for possible *values*|
+|_CAST_LEVEL|**0 to ??**|Level at which to cast the spell|
 
 
 #### ITEM_PROPERTY_POISON
+This property lacks a constructor and thus cannot be used with this tool at this time.
 | Special Prop | Range | Description |
 |----|----|----|
 
@@ -493,71 +496,71 @@ The following information is auto generated from the code.  Until I can go throu
 #### ITEM_PROPERTY_QUALITY
 | Special Prop | Range | Description |
 |----|----|----|
-|_QUALITY|**0 to 15**||
+|_QUALITY|**0 to 15**|[See IP_CONST_QUALITY_*](https://nwnlexicon.com/index.php?title=Ip_const_quality) for possible *values*|
 
 
 
 #### ITEM_PROPERTY_REGENERATION
 | Special Prop | Range | Description |
 |----|----|----|
-|_REGENERATION|**1 to 20**||
+|_REGENERATION|**1 to 20**|Regenerate by how much|
 
 
 
 #### ITEM_PROPERTY_REGENERATION_VAMPIRIC
 | Special Prop | Range | Description |
 |----|----|----|
-|_REGENERATION_VAMPIRIC|**1 to 20**||
+|_REGENERATION_VAMPIRIC|**1 to 20**|Regenerate by how much|
 
 
 
 #### ITEM_PROPERTY_SAVING_THROW_BONUS
 | Special Prop | Range | Description |
 |----|----|----|
-|_SAVE_VS|**0 to 15**||
-|_SAVING_THROW_BONUS|**1 to 20**||
+|_SAVE_VS|**0 to 15**|[See IP_CONST_SAVEVS_*](https://nwnlexicon.com/index.php?title=Ip_const_savevs) for possible *values*|
+|_SAVING_THROW_BONUS|**1 to 20**|Saving throw bonus|
 
 
 #### ITEM_PROPERTY_SAVING_THROW_BONUS_SPECIFIC
 | Special Prop | Range | Description |
 |----|----|----|
-|_SAVING_THROW_BONUS_SPECIFIC|**1 to 3**||
-|_SAVING_THROW_BONUS|**1 to 20**||
+|_SAVING_THROW_BONUS_SPECIFIC|**1 to 3**|[See IP_CONST_SAVEBASETYPE_*](https://nwnlexicon.com/index.php?title=Ip_const_savebasetype) for possible *values*|
+|_SAVING_THROW_BONUS|**1 to 20**|Bonus to add|
 
 
 #### ITEM_PROPERTY_SKILL_BONUS
 | Special Prop | Range | Description |
 |----|----|----|
-|_SKILL_BONUS|**0 to 255**||
-|_VALUE|**1 to 50**||
+|_SKILL_BONUS|**0 to 255**|[See SKILL_*](https://nwnlexicon.com/index.php?title=Skill) for possible *values*|
+|_VALUE|**1 to 50**|Bonus amount|
 
 
 #### ITEM_PROPERTY_SPECIAL_WALK
 | Special Prop | Range | Description |
 |----|----|----|
-|_SPECIAL_WALK|**0 to 0**||
+|_SPECIAL_WALK|**0 to 0**|Walktype|
 
 
 
 #### ITEM_PROPERTY_SPELL_RESISTANCE
 | Special Prop | Range | Description |
 |----|----|----|
-|_SPELL_RESISTANCE|**0 to 11**||
+|_SPELL_RESISTANCE|**0 to 11**|[See IP_CONST_SPELLRESISTANCEBONUS_*](https://nwnlexicon.com/index.php?title=Ip_const_spellresistancebonus) for possible *values*|
 
 
 
 #### ITEM_PROPERTY_THIEVES_TOOLS
 | Special Prop | Range | Description |
 |----|----|----|
-|_THIEVES_TOOLS|**1 to 12**||
+|_THIEVES_TOOLS|**1 to 12**|Pick lock bonus to the tools.|
 
 
 
 #### ITEM_PROPERTY_TRAP
 | Special Prop | Range | Description |
 |----|----|----|
-|_VALUE|**0 to 3**||
-|_TRAP|**1 to 11**||
+|_VALUE|**0 to 3**|[See IP_CONST_TRAPSTRENGTH_*](https://nwnlexicon.com/index.php?title=Ip_const_trapstrength) for possible *values*|
+|_TRAP|**1 to 11**|[See IP_CONST_TRAPTYPE_*](https://nwnlexicon.com/index.php?title=Ip_const_traptype) for possible *values*|
 
 
 #### ITEM_PROPERTY_TRUE_SEEING
@@ -570,42 +573,42 @@ The following information is auto generated from the code.  Until I can go throu
 #### ITEM_PROPERTY_TURN_RESISTANCE
 | Special Prop | Range | Description |
 |----|----|----|
-|_TURN_RESISTANCE|**1 to 50**||
+|_TURN_RESISTANCE|**1 to 50**|Turn resistance bonus to add|
 
 
 
 #### ITEM_PROPERTY_UNLIMITED_AMMUNITION
 | Special Prop | Range | Description |
 |----|----|----|
-|_UNLIMITED_AMMUNITION|**1 to 15**||
+|_UNLIMITED_AMMUNITION|**1 to 15**|[See IP_CONST_UNLIMITEDAMMO_*](https://nwnlexicon.com/index.php?title=Ip_const_unlimitedammo) for possible *values*|
 
 
 
 #### ITEM_PROPERTY_USE_LIMITATION_ALIGNMENT_GROUP
 | Special Prop | Range | Description |
 |----|----|----|
-|_USE_LIMITATION_ALIGNMENT_GROUP|**0 to 5**||
+|_USE_LIMITATION_ALIGNMENT_GROUP|**0 to 5**|[See IP_CONST_ALIGNMENTGROUP_*](https://nwnlexicon.com/index.php?title=Ip_const_alignmentgroup) for possible *values*|
 
 
 
 #### ITEM_PROPERTY_USE_LIMITATION_CLASS
 | Special Prop | Range | Description |
 |----|----|----|
-|_USE_LIMITATION_CLASS|**0 to 10**||
+|_USE_LIMITATION_CLASS|**0 to 10**|[See IP_CONST_CLASS_*](https://nwnlexicon.com/index.php?title=Ip_const_class) for possible *values*|
 
 
 
 #### ITEM_PROPERTY_USE_LIMITATION_RACIAL_TYPE
 | Special Prop | Range | Description |
 |----|----|----|
-|_USE_LIMITATION_RACIAL_TYPE|**0 to 25**||
+|_USE_LIMITATION_RACIAL_TYPE|**0 to 25**|[See IP_CONST_RACIALTYPE_*](https://nwnlexicon.com/index.php?title=Ip_const_racialtype) for possible *values*|
 
 
 
 #### ITEM_PROPERTY_USE_LIMITATION_SPECIFIC_ALIGNMENT
 | Special Prop | Range | Description |
 |----|----|----|
-|_USE_LIMITATION_SPECIFIC_ALIGNMENT|**0 to 8**||
+|_USE_LIMITATION_SPECIFIC_ALIGNMENT|**0 to 8**|[See IP_CONST_ALIGNMENT_*](https://nwnlexicon.com/index.php?title=Ip_const_alignment) for possible *values*|
 
 
 
@@ -619,11 +622,11 @@ The following information is auto generated from the code.  Until I can go throu
 #### ITEM_PROPERTY_VISUALEFFECT
 | Special Prop | Range | Description |
 |----|----|----|
-|_VISUALEFFECT|**0 to 6**||
+|_VISUALEFFECT|**0 to 6**|[See ITEM_VISUAL_*](https://nwnlexicon.com/index.php?title=Item_visual) for possible *values*|
 
 
 
 #### ITEM_PROPERTY_WEIGHT_INCREASE
 | Special Prop | Range | Description |
 |----|----|----|
-|_WEIGHT_INCREASE|**0 to 5**||
+|_WEIGHT_INCREASE|**0 to 5**|[See IP_CONST_WEIGHTINCREASE_*](https://nwnlexicon.com/index.php?title=Ip_const_weightincrease) for possible *values*|
