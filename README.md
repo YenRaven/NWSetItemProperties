@@ -178,8 +178,8 @@ The following information is auto generated from the code.  Until I can go throu
 #### ITEM_PROPERTY_DAMAGE_BONUS
 | Special Prop | Range | Description |
 |----|----|----|
-|_DAMAGE_TYPE|**0 to 410**||
-|_DAMAGE_BONUS|**1 to 13**||
+|_DAMAGE_TYPE|**0 to 13**||
+|_DAMAGE_BONUS|**1 to 20**||
 
 
 #### ITEM_PROPERTY_DAMAGE_BONUS_VS_ALIGNMENT_GROUP

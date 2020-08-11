@@ -971,9 +971,9 @@ void RedoSetItemBonuses(object oItem, string sSetItemTagVarName, string sSetTag,
 
                 case ITEM_PROPERTY_DAMAGE_BONUS :
                     limits.iArgOneMin = 0;
-                    limits.iArgOneMax = 410;
+                    limits.iArgOneMax = 13;
                     limits.iArgTwoMin = 1;
-                    limits.iArgTwoMax = 13;
+                    limits.iArgTwoMax = 20;
                     args = GetItemPropArgumentsTwoArgs(
                         oItem,
                         sSetBonusPrefix,
