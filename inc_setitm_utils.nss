@@ -1,50 +1,6 @@
 #include "inc_loglevel"
 #include "x2_inc_itemprop"
 
-const string IP_CONST_ABILITY_TYPE                      = "IP_CONST_ABILITY_*";
-const string IP_CONST_ACMODIFIERTYPE_TYPE               = "IP_CONST_ACMODIFIERTYPE_*";
-const string IP_CONST_ADDITIONAL_TYPE                   = "IP_CONST_ADDITIONAL_*";
-const string IP_CONST_ALIGNMENT_TYPE                    = "IP_CONST_ALIGNMENT_*";
-const string IP_CONST_ALIGNMENTGROUP_TYPE               = "IP_CONST_ALIGNMENTGROUP_*";
-const string IP_CONST_AMMOTYPE_TYPE                     = "IP_CONST_AMMOTYPE_*";
-const string IP_CONST_ARCANE_SPELL_FAILURE_TYPE         = "IP_CONST_ARCANE_SPELL_FAILURE_*";
-const string IP_CONST_CASTSPELL_TYPE                    = "IP_CONST_CASTSPELL_*";
-const string IP_CONST_CASTSPELL_NUMUSES_TYPE            = "IP_CONST_CASTSPELL_NUMUSES_*";
-const string IP_CONST_CLASS_TYPE                        = "IP_CONST_CLASS_*";
-const string IP_CONST_CONTAINERWEIGHTRED_TYPE           = "IP_CONST_CONTAINERWEIGHTRED_*";
-const string IP_CONST_DAMAGEBONUS_TYPE                  = "IP_CONST_DAMAGEBONUS_*";
-const string IP_CONST_DAMAGEIMMUNITY_TYPE               = "IP_CONST_DAMAGEIMMUNITY_*";
-const string IP_CONST_DAMAGEREDUCTION_TYPE              = "IP_CONST_DAMAGEREDUCTION_*";
-const string IP_CONST_DAMAGERESIST_TYPE                 = "IP_CONST_DAMAGERESIST_*";
-const string IP_CONST_DAMAGESOAK_TYPE                   = "IP_CONST_DAMAGESOAK_*";
-const string IP_CONST_DAMAGETYPE_TYPE                   = "IP_CONST_DAMAGETYPE_*";
-const string IP_CONST_DAMAGEVULNERABILITY_TYPE          = "IP_CONST_DAMAGEVULNERABILITY_*";
-const string IP_CONST_FEAT_TYPE                         = "IP_CONST_FEAT_*";
-const string IP_CONST_IMMUNITYMISC_TYPE                 = "IP_CONST_IMMUNITYMISC_*";
-const string IP_CONST_IMMUNITYSPELL_TYPE                = "IP_CONST_IMMUNITYSPELL_*";
-const string IP_CONST_LIGHTBRIGHTNESS_TYPE              = "IP_CONST_LIGHTBRIGHTNESS_*";
-const string IP_CONST_LIGHTCOLOR_TYPE                   = "IP_CONST_LIGHTCOLOR_*";
-const string IP_CONST_MONSTERDAMAGE_TYPE                = "IP_CONST_MONSTERDAMAGE_*";
-const string IP_CONST_ONHIT_TYPE                        = "IP_CONST_ONHIT_*";
-const string IP_CONST_ONHIT_CASTSPELL_TYPE              = "IP_CONST_ONHIT_CASTSPELL_*";
-const string IP_CONST_ONHIT_DURATION_TYPE               = "IP_CONST_ONHIT_DURATION_*";
-const string IP_CONST_ONHIT_SAVEDC_TYPE                 = "IP_CONST_ONHIT_SAVEDC_*";
-const string IP_CONST_ONMONSTERHIT_TYPE                 = "IP_CONST_ONMONSTERHIT_*";
-const string IP_CONST_POISON_TYPE                       = "IP_CONST_POISON_*";
-const string IP_CONST_QUALITY_TYPE                      = "IP_CONST_QUALITY_*";
-const string IP_CONST_RACIALTYPE_TYPE                   = "IP_CONST_RACIALTYPE_*";
-const string IP_CONST_REDUCEDWEIGHT_TYPE                = "IP_CONST_REDUCEDWEIGHT_*";
-const string IP_CONST_SAVEBASETYPE_TYPE                 = "IP_CONST_SAVEBASETYPE_*";
-const string IP_CONST_SAVEVS_TYPE                       = "IP_CONST_SAVEVS_*";
-const string IP_CONST_SPELLLEVEL_TYPE                   = "IP_CONST_SPELLLEVEL_*";
-const string IP_CONST_SPELLRESISTANCEBONUS_TYPE         = "IP_CONST_SPELLRESISTANCEBONUS_*";
-const string IP_CONST_SPELLSCHOOL_TYPE                  = "IP_CONST_SPELLSCHOOL_*";
-const string IP_CONST_TRAPSTRENGTH_TYPE                 = "IP_CONST_TRAPSTRENGTH_*";
-const string IP_CONST_TRAPTYPE_TYPE                     = "IP_CONST_TRAPTYPE_*";
-const string IP_CONST_UNLIMITEDAMMO_TYPE                = "IP_CONST_UNLIMITEDAMMO_*";
-const string IP_CONST_WEIGHTINCREASE_TYPE               = "IP_CONST_WEIGHTINCREASE_*";
-
-
 const string SET_PROPERTY_TYPE_ABILITY_BONUS                = "ITEM_PROPERTY_ABILITY_BONUS";
 const string SET_PROPERTY_TYPE_AC_BONUS                     = "ITEM_PROPERTY_AC_BONUS";
 const string SET_PROPERTY_TYPE_AC_BONUS_VS_ALIGNMENT_GROUP  = "ITEM_PROPERTY_AC_BONUS_VS_ALIGNMENT_GROUP";
@@ -305,6 +261,24 @@ string SetItemTagVarName(int iTagNum = 0)
 {
     return "SET_TAG_" + IntToString(iTagNum);
 }
+string GetItemSetTag(object oItem, int iIdx = 0){
+    return GetLocalString(oItem, SetItemTagVarName(iIdx));
+}
+
+int iSetTagIndex = 0;
+string getNextSetTag(object oItem)
+{
+    string returnVal = GetItemSetTag(OBJECT_SELF, iSetTagIndex);
+    iSetTagIndex ++;
+    return returnVal;
+}
+string getFirstSetTag(object oItem)
+{
+    iSetTagIndex = 0;
+    return getNextSetTag(oItem);    
+}
+
+
 
 // EEEE  QQQ   U   U III PPPP  EEEE DDD      III TTTTTT EEEE M   M     U   U TTTTTT III L     SSS
 // E    Q   Q  U   U  I  P   P E    D  D      I    TT   E    MM MM     U   U   TT    I  L    S
@@ -358,62 +332,72 @@ struct EquipedItems GetEquipedItems(object oPC)
     return equiped;
 }
 
+int TestItemBelongsToSet(object oItem, string sSetTag)
+{
+    string sItemSetTag = getFirstSetTag(oItem);
+    while(sItemSetTag != ""){
+        if(sSetTag == sItemSetTag)
+            return TRUE;
+    }
+    return FALSE;
+}
+
 int GetNumberOfSetItemsEquiped(struct EquipedItems equipedItems, string sSetItemTagVarName, string sSetTag)
 {
     int iSetItemsEquiped = 0;
     //Check every other item for belonging to the same set
-    if(GetLocalString(equipedItems.oArms, sSetItemTagVarName) == sSetTag){
+    if(TestItemBelongsToSet(equipedItems.oArms, sSetTag){
         iSetItemsEquiped ++;
     }
-    if(GetLocalString(equipedItems.oArrows, sSetItemTagVarName) == sSetTag){
+    if(TestItemBelongsToSet(equipedItems.oArrows, sSetTag){
         iSetItemsEquiped ++;
     }
-    if(GetLocalString(equipedItems.oBelt, sSetItemTagVarName) == sSetTag){
+    if(TestItemBelongsToSet(equipedItems.oBelt, sSetTag){
         iSetItemsEquiped ++;
     }
-    if(GetLocalString(equipedItems.oBolts, sSetItemTagVarName) == sSetTag){
+    if(TestItemBelongsToSet(equipedItems.oBolts, sSetTag){
         iSetItemsEquiped ++;
     }
-    if(GetLocalString(equipedItems.oBoots, sSetItemTagVarName) == sSetTag){
+    if(TestItemBelongsToSet(equipedItems.oBoots, sSetTag){
         iSetItemsEquiped ++;
     }
-    if(GetLocalString(equipedItems.oBullets, sSetItemTagVarName) == sSetTag){
+    if(TestItemBelongsToSet(equipedItems.oBullets, sSetTag){
         iSetItemsEquiped ++;
     }
-    if(GetLocalString(equipedItems.oCarmour, sSetItemTagVarName) == sSetTag){
+    if(TestItemBelongsToSet(equipedItems.oCarmour, sSetTag){
         iSetItemsEquiped ++;
     }
-    if(GetLocalString(equipedItems.oChest, sSetItemTagVarName) == sSetTag){
+    if(TestItemBelongsToSet(equipedItems.oChest, sSetTag){
         iSetItemsEquiped ++;
     }
-    if(GetLocalString(equipedItems.oCloak, sSetItemTagVarName) == sSetTag){
+    if(TestItemBelongsToSet(equipedItems.oCloak, sSetTag){
         iSetItemsEquiped ++;
     }
-    if(GetLocalString(equipedItems.oCweaponb, sSetItemTagVarName) == sSetTag){
+    if(TestItemBelongsToSet(equipedItems.oCweaponb, sSetTag){
         iSetItemsEquiped ++;
     }
-    if(GetLocalString(equipedItems.oCweaponl, sSetItemTagVarName) == sSetTag){
+    if(TestItemBelongsToSet(equipedItems.oCweaponl, sSetTag){
         iSetItemsEquiped ++;
     }
-    if(GetLocalString(equipedItems.oCweaponr, sSetItemTagVarName) == sSetTag){
+    if(TestItemBelongsToSet(equipedItems.oCweaponr, sSetTag){
         iSetItemsEquiped ++;
     }
-    if(GetLocalString(equipedItems.oHead, sSetItemTagVarName) == sSetTag){
+    if(TestItemBelongsToSet(equipedItems.oHead, sSetTag){
         iSetItemsEquiped ++;
     }
-    if(GetLocalString(equipedItems.oLefthand, sSetItemTagVarName) == sSetTag){
+    if(TestItemBelongsToSet(equipedItems.oLefthand, sSetTag){
         iSetItemsEquiped ++;
     }
-    if(GetLocalString(equipedItems.oLeftring, sSetItemTagVarName) == sSetTag){
+    if(TestItemBelongsToSet(equipedItems.oLeftring, sSetTag){
         iSetItemsEquiped ++;
     }
-    if(GetLocalString(equipedItems.oNeck, sSetItemTagVarName) == sSetTag){
+    if(TestItemBelongsToSet(equipedItems.oNeck, sSetTag){
         iSetItemsEquiped ++;
     }
-    if(GetLocalString(equipedItems.oRighthand, sSetItemTagVarName) == sSetTag){
+    if(TestItemBelongsToSet(equipedItems.oRighthand, sSetTag){
         iSetItemsEquiped ++;
     }
-    if(GetLocalString(equipedItems.oRightring, sSetItemTagVarName) == sSetTag){
+    if(TestItemBelongsToSet(equipedItems.oRightring, sSetTag){
         iSetItemsEquiped ++;
     }
     return iSetItemsEquiped;
@@ -584,6 +568,12 @@ struct SetItemPropArguments GetItemPropArgumentsThreeArgs(
 
     return args;
 }
+
+// RRRR         d      SSS       t  BBBB                                 ff                 t
+// R   R        d     S          t  B   B                                f                  t  ii
+// RRRR  eee  ddd ooo  SSS  eee ttt BBBB  ooo nnn  u  u  ss eee  ss     fff u  u nnn   ccc ttt    ooo nnn   ss
+// R R   e e d  d o o     S e e  t  B   B o o n  n u  u  s  e e  s       f  u  u n  n c     t  ii o o n  n  s
+// R  RR ee   ddd ooo SSSS  ee   tt BBBB  ooo n  n  uuu ss  ee  ss       f   uuu n  n  ccc  tt ii ooo n  n ss
 
 // Redo the set bonuses on a single item.
 void RedoSetItemBonuses(object oItem, string sSetItemTagVarName, string sSetTag, int iSetItemsEquiped)
