@@ -67,113 +67,112 @@ The following information is auto generated from the code.  Until I can go throu
 #### ITEM_PROPERTY_ABILITY_BONUS
 | Special Prop | Range | Description |
 |----|----|----|
-|_ABILITY_BONUS|**0 to 5**||
-|_VALUE|**1 to 12**||
+|_ABILITY_BONUS|**0 to 5**|[See IP_CONST_ABILITY_*](https://nwnlexicon.com/index.php?title=Ip_const_ability) for possible *values*|
+|_VALUE|**1 to 12**| The ability score bonus to provide.|
 
 
 #### ITEM_PROPERTY_AC_BONUS
 | Special Prop | Range | Description |
 |----|----|----|
-|_VALUE|**1 to 20**||
+|_VALUE|**1 to 20**| The AC Bonus value to provide.|
 
 
 
 #### ITEM_PROPERTY_AC_BONUS_VS_ALIGNMENT_GROUP
 | Special Prop | Range | Description |
 |----|----|----|
-|_AC_BONUS_VS_ALIGNMENT_GROUP|**0 to 5**||
-|_VALUE|**1 to 20**||
+|_AC_BONUS_VS_ALIGNMENT_GROUP|**0 to 5**|[See IP_CONST_ALIGNMENTGROUP_*](https://nwnlexicon.com/index.php?title=Ip_const_alignmentgroup) for possible *values*|
+|_VALUE|**1 to 20**|The AC Bonus value to provide.|
 
 
 #### ITEM_PROPERTY_AC_BONUS_VS_DAMAGE_TYPE
 | Special Prop | Range | Description |
 |----|----|----|
-|_AC_BONUS_VS_DAMAGE_TYPE|**0 to 13**||
-|_VALUE|**1 to 20**||
+|_AC_BONUS_VS_DAMAGE_TYPE|**0 to 13**|[See IP_CONST_DAMAGETYPE_*](https://nwnlexicon.com/index.php?title=Ip_const_damagetype) for possible *values*|
+|_VALUE|**1 to 20**|The AC Bonus value to provide.|
 
 
 #### ITEM_PROPERTY_AC_BONUS_VS_RACIAL_GROUP
 | Special Prop | Range | Description |
 |----|----|----|
-|_AC_BONUS_VS_RACIAL_GROUP|**0 to 25**||
-|_VALUE|**1 to 20**||
+|_AC_BONUS_VS_RACIAL_GROUP|**0 to 25**|[See IP_CONST_RACIALTYPE_*](https://nwnlexicon.com/index.php?title=Ip_const_racialtype) for possible *values*|
+|_VALUE|**1 to 20**|The AC Bonus value to provide.|
 
 
 #### ITEM_PROPERTY_AC_BONUS_VS_SPECIFIC_ALIGNMENT
 | Special Prop | Range | Description |
 |----|----|----|
-|_AC_BONUS_VS_SPECIFIC_ALIGNMENT|**0 to 8**||
-|_VALUE|**1 to 20**||
+|_AC_BONUS_VS_SPECIFIC_ALIGNMENT|**0 to 8**|[See IP_CONST_ALIGNMENT_*](https://nwnlexicon.com/index.php?title=Ip_const_alignment) for possible *values*|
+|_VALUE|**1 to 20**|The AC Bonus value to provide.|
 
 
 #### ITEM_PROPERTY_ADDITIONAL
 | Special Prop | Range | Description |
 |----|----|----|
-|_ADDITIONAL|**0 to 1**||
+|_ADDITIONAL|**0 to 1**|[See IP_CONST_ADDITIONAL_*](https://nwnlexicon.com/index.php?title=Ip_const_additional) for possible *values*|
 
 
 
 #### ITEM_PROPERTY_ARCANE_SPELL_FAILURE
 | Special Prop | Range | Description |
 |----|----|----|
-|_ARCANE_SPELL_FAILURE|**0 to 19**||
-
+|_ARCANE_SPELL_FAILURE|**0 to 19**|[See IP_CONST_ARCANE_SPELL_FAILURE_*](https://nwnlexicon.com/index.php?title=ItemPropertyArcaneSpellFailure) for possible *values* |
 
 
 #### ITEM_PROPERTY_ATTACK_BONUS
 | Special Prop | Range | Description |
 |----|----|----|
-|_ATTACK_BONUS|**1 to 20**||
+|_ATTACK_BONUS|**1 to 20**|The attack bonus value to provide.|
 
 
 
 #### ITEM_PROPERTY_ATTACK_BONUS_VS_ALIGNMENT_GROUP
 | Special Prop | Range | Description |
 |----|----|----|
-|_ATTACK_BONUS_VS_ALIGNMENT_GROUP|**0 to 5**||
-|_VALUE|**1 to 20**||
+|_ATTACK_BONUS_VS_ALIGNMENT_GROUP|**0 to 5**|[See IP_CONST_ALIGNMENTGROUP_*](https://nwnlexicon.com/index.php?title=Ip_const_alignmentgroup) for possible *values*|
+|_VALUE|**1 to 20**|The attack bonus value to provide.|
 
 
 #### ITEM_PROPERTY_ATTACK_BONUS_VS_RACIAL_GROUP
 | Special Prop | Range | Description |
 |----|----|----|
-|_ATTACK_BONUS_VS_RACIAL_GROUP|**0 to 25**||
-|_VALUE|**1 to 20**||
+|_ATTACK_BONUS_VS_RACIAL_GROUP|**0 to 25**|[See IP_CONST_RACIALTYPE_*](https://nwnlexicon.com/index.php?title=Ip_const_racialtype) for possible *values*|
+|_VALUE|**1 to 20**|The attack bonus value to provide.|
 
 
 #### ITEM_PROPERTY_ATTACK_BONUS_VS_SPECIFIC_ALIGNMENT
 | Special Prop | Range | Description |
 |----|----|----|
-|_ATTACK_BONUS_VS_SPECIFIC_ALIGNMENT|**0 to 8**||
-|_VALUE|**1 to 20**||
+|_ATTACK_BONUS_VS_SPECIFIC_ALIGNMENT|**0 to 8**|[See IP_CONST_ALIGNMENT_*](https://nwnlexicon.com/index.php?title=Ip_const_alignment) for possible *values*|
+|_VALUE|**1 to 20**|The attack bonus value to provide.|
 
 
 #### ITEM_PROPERTY_BASE_ITEM_WEIGHT_REDUCTION
 | Special Prop | Range | Description |
 |----|----|----|
-|_BASE_ITEM_WEIGHT_REDUCTION|**1 to 5**||
+|_BASE_ITEM_WEIGHT_REDUCTION|**1 to 5**|[See IP_CONST_REDUCEDWEIGHT_*](https://nwnlexicon.com/index.php?title=Ip_const_reducedweight) for possible *values*|
 
 
 
 #### ITEM_PROPERTY_BONUS_FEAT
 | Special Prop | Range | Description |
 |----|----|----|
-|_BONUS_FEAT|**0 to 62**||
+|_BONUS_FEAT|**0 to 62**|[See IP_CONST_FEAT_*](https://nwnlexicon.com/index.php?title=Ip_const_feat) for possible *values*|
 
 
 
 #### ITEM_PROPERTY_BONUS_SPELL_SLOT_OF_LEVEL_N
 | Special Prop | Range | Description |
 |----|----|----|
-|_CLASS|**0 to 10**||
-|_BONUS_SPELL_SLOT_OF_LEVEL_N|**0 to 9**||
+|_CLASS|**0 to 10**|[See IP_CONST_CLASS_*](https://nwnlexicon.com/index.php?title=Ip_const_class) for possible *values*|
+|_BONUS_SPELL_SLOT_OF_LEVEL_N|**0 to 9**|The level of the spell slot to provide.|
 
 
 #### ITEM_PROPERTY_CAST_SPELL
 | Special Prop | Range | Description |
 |----|----|----|
-|_CAST_SPELL|**0 to 410**||
-|_USES|**1 to 13**||
+|_CAST_SPELL|**0 to 410**|[See IP_CONST_CASTSPELL_*](https://nwnlexicon.com/index.php?title=Ip_const_castspell) for possible *values*|
+|_USES|**1 to 13**|[See IP_CONST_CASTSPELL_NUMUSES_*](https://nwnlexicon.com/index.php?title=Ip_const_castspell_numuses) for possible *values*|
 
 
 #### ITEM_PROPERTY_DAMAGE_BONUS
