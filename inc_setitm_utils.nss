@@ -4,7 +4,7 @@
 const string SET_PROPERTY_TYPE_ABILITY_BONUS                = "ITEM_PROPERTY_ABILITY_BONUS";
 const string SET_PROPERTY_TYPE_AC_BONUS                     = "ITEM_PROPERTY_AC_BONUS";
 const string SET_PROPERTY_TYPE_AC_BONUS_VS_ALIGNMENT_GROUP  = "ITEM_PROPERTY_AC_BONUS_VS_ALIGNMENT_GROUP";
-const string SET_PROPERTY_TYPE_AC_BONUS_VS_DAMAGE_TYPE      = "ITEM_PROPERTY_ABILITY_BONUS";
+const string SET_PROPERTY_TYPE_AC_BONUS_VS_DAMAGE_TYPE      = "ITEM_PROPERTY_AC_BONUS_VS_DAMAGE_TYPE";
 const string SET_PROPERTY_TYPE_AC_BONUS_VS_RACIAL_GROUP     = "ITEM_PROPERTY_AC_BONUS_VS_RACIAL_GROUP";
 const string SET_PROPERTY_TYPE_AC_BONUS_VS_SPECIFIC_ALIGNMENT = "ITEM_PROPERTY_AC_BONUS_VS_SPECIFIC_ALIGNMENT";
 const string SET_PROPERTY_TYPE_ADDITIONAL                   = "ITEM_PROPERTY_ADDITIONAL";
@@ -612,6 +612,7 @@ void RedoSetItemBonuses(object oItem, string sSetItemTagVarName, string sSetTag,
             int iSetPropertyBonusType = GetItemPropertyConstFromSetPropertyType(sSetPropertyBounsType);
             struct SetItemPropArgLimits limits;
             struct SetItemPropArguments args;
+            // Documentation Regex: case (ITEM_PROPERTY_[A-Z_]+) ?:((\n\s+limits\.iArgOneMin = (\d+);)?(\n\s+limits\.iArgOneMax = (\d+);)?(\n\s+limits\.iArgTwoMin = (\d+);)?(\n\s+limits\.iArgTwoMax = (\d+);)?(\n\s+limits.iArgThreeMin = (\d+);)?(\n\s+limits.iArgThreeMax = (\d+);)?(\n.+)+limits,(\n\s+"([A-Z_]+)",?.*)?(\n\s+"([A-Z_]+)",?.*)?(\n\s+"([A-Z_]+)",?.*)?)?
             switch(iSetPropertyBonusType)
             {
                 case ITEM_PROPERTY_ABILITY_BONUS:
