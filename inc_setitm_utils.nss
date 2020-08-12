@@ -1,6 +1,7 @@
 #include "inc_loglevel"
 #include "x2_inc_itemprop"
 
+//Consts for the translation of ITEM_PROPERTY_* const names into their value.  So these can be defined by name in item prop variables instead of ints.
 const string SET_PROPERTY_TYPE_ABILITY_BONUS                = "ITEM_PROPERTY_ABILITY_BONUS";
 const string SET_PROPERTY_TYPE_AC_BONUS                     = "ITEM_PROPERTY_AC_BONUS";
 const string SET_PROPERTY_TYPE_AC_BONUS_VS_ALIGNMENT_GROUP  = "ITEM_PROPERTY_AC_BONUS_VS_ALIGNMENT_GROUP";
@@ -82,6 +83,95 @@ const string SET_PROPERTY_TYPE_USE_LIMITATION_SPECIFIC_ALIGNMENT = "ITEM_PROPERT
 const string SET_PROPERTY_TYPE_USE_LIMITATION_TILESET       = "ITEM_PROPERTY_USE_LIMITATION_TILESET";
 const string SET_PROPERTY_TYPE_VISUALEFFECT                 = "ITEM_PROPERTY_VISUALEFFECT";
 const string SET_PROPERTY_TYPE_WEIGHT_INCREASE              = "ITEM_PROPERTY_WEIGHT_INCREASE";
+
+// ItemSetTagTokenizer is used to loop over all the SET_TAG_# props on an item oItem. 
+struct ItemSetTagTokenizer {
+    object oItem;
+    int iSetTagIndex;
+    string sCurrentTag;
+};
+
+// Struct to pass around all of a creatures equiped items between various functions.
+struct EquipedItems {
+    object oArms;
+    object oArrows;
+    object oBelt;
+    object oBolts;
+    object oBoots;
+    object oBullets;
+    object oCarmour;
+    object oChest;
+    object oCloak;
+    object oCweaponb;
+    object oCweaponl;
+    object oCweaponr;
+    object oHead;
+    object oLefthand;
+    object oLeftring;
+    object oNeck;
+    object oRighthand;
+    object oRightring;
+};
+
+// Struct for the return value of the various functions that are used to translate special property strings like _CAST_LEVEL into their value at the correct argument position for the various ItemProperty* constructor functions.
+struct SetItemPropArguments {
+    int iArgOne;
+    int iArgTwo;
+    int iArgThree;
+};
+
+// Struct to define the upper and lower bounds of the ints that are passed to the various ItemProperty* constructors.  Used for error reporting.
+struct SetItemPropArgLimits {
+    int iArgOneMin;
+    int iArgOneMax;
+    int iArgTwoMin;
+    int iArgTwoMax;
+    int iArgThreeMin;
+    int iArgThreeMax;
+    int iNotSetArgOneMin;
+    int iNotSetArgTwoMin;
+    int iNotSetArgThreeMin;
+    int iNotSetArgOneMax;
+    int iNotSetArgTwoMax;
+    int iNotSetArgThreeMax;
+};
+
+int GetItemPropertyConstFromSetPropertyType(string sSetPropertyType); //Function to translate the value of _TYPE props to their int value.
+string SetItemTagVarName(int iTagNum = 0); //Takes an int iTagNum and creates a properly formated SET_TAG_# string.
+string GetItemSetTag(object oItem, int iIdx = 0); //Finds the SET_TAG_# value at iIdx
+struct ItemSetTagTokenizer  GetNextSetTag(struct ItemSetTagTokenizer tknizr); //SetTag token looper GetNext function.
+struct ItemSetTagTokenizer GetFirstSetTag(object oItem); //SetTag token looper GetFirst function.
+struct EquipedItems GetEquipedItems(object oPC); //Returns all items equiped by oPC
+int TestItemBelongsToSet(object oItem, string sSetTag); //Returns TRUE if oItem has a SET_TAG_# whoes value equals sSetTag
+int GetSetTagId(object oItem, string sSetTag); //Gets the # part of the SET_TAG_# variable with value sSetTag
+int GetNumberOfSetItemsEquiped(struct EquipedItems equipedItems, string sSetTag); //Get the number of items in equipedItems that have at least one SET_TAG_# with value sSetTag
+
+//Various functions to get the speical properties from an items local variables so they can be used in the ItemProperties* constructor.
+struct SetItemPropArguments GetItemPropArgumentsOneArg(
+    object oItem,
+    string sSetBonusPrefix,
+    struct SetItemPropArgLimits ArgLimits,
+    string sSetBonusArgOneSuffix = "_VALUE"
+);
+struct SetItemPropArguments GetItemPropArgumentsTwoArgs(
+    object oItem,
+    string sSetBonusPrefix,
+    struct SetItemPropArgLimits ArgLimits,
+    string sSetBonusArgOneSuffix,
+    string sSetBonusArgTwoSuffix = "_VALUE"
+);
+struct SetItemPropArguments GetItemPropArgumentsThreeArgs(
+    object oItem,
+    string sSetBonusPrefix,
+    struct SetItemPropArgLimits ArgLimits,
+    string sSetBonusArgOneSuffix,
+    string sSetBonusArgTwoSuffix,
+    string sSetBonusArgThreeSuffix = "_VALUE"
+);
+
+void RedoSetItemBonuses(object oItem, string sSetTag, int iSetItemsEquiped);  //Redo the set bonus sSetTag on a single item oItem to the level iSetItemsEquiped
+void RedoEquipedSetItemsBonuses(struct EquipedItems equipedItems, string sSetTag, int iSetItemsCount); //Redo the set bounus sSetTag on all equiped items.
+
 
 int GetItemPropertyConstFromSetPropertyType(string sSetPropertyType)
 {
@@ -265,12 +355,6 @@ string GetItemSetTag(object oItem, int iIdx = 0){
     return GetLocalString(oItem, SetItemTagVarName(iIdx));
 }
 
-struct ItemSetTagTokenizer {
-    object oItem;
-    int iSetTagIndex;
-    string sCurrentTag;
-};
-
 struct ItemSetTagTokenizer  GetNextSetTag(struct ItemSetTagTokenizer tknizr)
 {
     tknizr.sCurrentTag = GetItemSetTag(tknizr.oItem, tknizr.iSetTagIndex);
@@ -293,27 +377,6 @@ struct ItemSetTagTokenizer GetFirstSetTag(object oItem)
 // E    Q  QQ  U   U  I  P     E    D  D      I    TT   E    M   M     U   U   TT    I  L        S
 // EEEE  QQQQ   UUU  III P     EEEE DDD      III   TT   EEEE M   M      UUU    TT   III LLLL SSSS
 //           Q
-
-struct EquipedItems {
-    object oArms;
-    object oArrows;
-    object oBelt;
-    object oBolts;
-    object oBoots;
-    object oBullets;
-    object oCarmour;
-    object oChest;
-    object oCloak;
-    object oCweaponb;
-    object oCweaponl;
-    object oCweaponr;
-    object oHead;
-    object oLefthand;
-    object oLeftring;
-    object oNeck;
-    object oRighthand;
-    object oRightring;
-};
 
 struct EquipedItems GetEquipedItems(object oPC)
 {
@@ -427,27 +490,6 @@ int GetNumberOfSetItemsEquiped(struct EquipedItems equipedItems, string sSetTag)
 //  SSS  EEE    TT        I    TT   EEE  M M M     PPPP  RRRR  O   O PPPP      M M M O   O D  D  I  FFF    Y   EEE  RRRR      U   U   TT    I  L     SSS
 //     S E      TT        I    TT   E    M   M     P     R R   O   O P         M   M O   O D  D  I  F      Y   E    R R       U   U   TT    I  L        S
 // SSSS  EEEE   TT       III   TT   EEEE M   M     P     R  RR  OOO  P         M   M  OOO  DDD  III F      Y   EEEE R  RR      UUU    TT   III LLLL SSSS
-
-struct SetItemPropArguments {
-    int iArgOne;
-    int iArgTwo;
-    int iArgThree;
-};
-
-struct SetItemPropArgLimits {
-    int iArgOneMin;
-    int iArgOneMax;
-    int iArgTwoMin;
-    int iArgTwoMax;
-    int iArgThreeMin;
-    int iArgThreeMax;
-    int iNotSetArgOneMin;
-    int iNotSetArgTwoMin;
-    int iNotSetArgThreeMin;
-    int iNotSetArgOneMax;
-    int iNotSetArgTwoMax;
-    int iNotSetArgThreeMax;
-};
 
 struct SetItemPropArgLimits DefaultArgLimits
 (
