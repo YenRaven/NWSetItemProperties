@@ -15,31 +15,20 @@ void main()
     struct EquipedItems equiped = GetEquipedItems(oPC);
 
     //For each set tag on the newly equiped item
-    int iSetTagVarNum = 0;
-    string sSetItemTagVarName = SetItemTagVarName(iSetTagVarNum);
-    string sSetTag = GetLocalString(
-        oItem,
-        sSetItemTagVarName
-    );
-
-    while (sSetTag != "")
+    struct ItemSetTagTokenizer sSetTagTkn = GetFirstSetTag(oItem);
+    while (sSetTagTkn.sCurrentTag != "")
     {
-        debug("Looping through Set tags: " + sSetTag);
+        debug("Looping through Set tags: " + sSetTagTkn.sCurrentTag);
         //Check every other item for belonging to the same set
-        int iSetItemsEquiped = GetNumberOfSetItemsEquiped(equiped, sSetItemTagVarName, sSetTag);
+        int iSetItemsEquiped = GetNumberOfSetItemsEquiped(equiped, sSetTagTkn.sCurrentTag);
         //Take away one for the item to be unequiped
         iSetItemsEquiped --;
 
         debug("Counted set items: " + IntToString(iSetItemsEquiped));
 
         //Once we have the full count, go through and update props on set items.
-        RedoEquipedSetItemsBonuses(equiped, sSetItemTagVarName, sSetTag, iSetItemsEquiped);
+        RedoEquipedSetItemsBonuses(equiped, sSetTagTkn.sCurrentTag, iSetItemsEquiped);
         debug("Redid set bonuses");
-
-        iSetTagVarNum ++;
-        sSetTag = GetLocalString(
-            oItem,
-            SetItemTagVarName(iSetTagVarNum)
-        );
+        sSetTagTkn = GetNextSetTag(sSetTagTkn);
     }
 }

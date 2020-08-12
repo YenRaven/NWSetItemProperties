@@ -265,21 +265,27 @@ string GetItemSetTag(object oItem, int iIdx = 0){
     return GetLocalString(oItem, SetItemTagVarName(iIdx));
 }
 
-int iSetTagIndex = 0;
-string getNextSetTag(object oItem)
+struct ItemSetTagTokenizer {
+    object oItem;
+    int iSetTagIndex;
+    string sCurrentTag;
+};
+
+struct ItemSetTagTokenizer  GetNextSetTag(struct ItemSetTagTokenizer tknizr)
 {
-    string returnVal = GetItemSetTag(oItem, iSetTagIndex);
-    trace("iSetTagIndex: " + IntToString(iSetTagIndex));
-    iSetTagIndex ++;
-    return returnVal;
-}
-string getFirstSetTag(object oItem)
-{
-    iSetTagIndex = 0;
-    return getNextSetTag(oItem);    
+    tknizr.sCurrentTag = GetItemSetTag(tknizr.oItem, tknizr.iSetTagIndex);
+    tknizr.iSetTagIndex ++;
+    return tknizr;
 }
 
-
+struct ItemSetTagTokenizer GetFirstSetTag(object oItem)
+{
+    struct ItemSetTagTokenizer tknizr;
+    tknizr.oItem = oItem;
+    tknizr.iSetTagIndex = 0;
+    tknizr = GetNextSetTag(tknizr);
+    return tknizr;    
+}
 
 // EEEE  QQQ   U   U III PPPP  EEEE DDD      III TTTTTT EEEE M   M     U   U TTTTTT III L     SSS
 // E    Q   Q  U   U  I  P   P E    D  D      I    TT   E    MM MM     U   U   TT    I  L    S
@@ -335,18 +341,27 @@ struct EquipedItems GetEquipedItems(object oPC)
 
 int TestItemBelongsToSet(object oItem, string sSetTag)
 {
-    string sItemSetTag = getFirstSetTag(oItem);
-    trace(sItemSetTag);
-    while(sItemSetTag != ""){
-        if(sSetTag == sItemSetTag)
+    struct ItemSetTagTokenizer sItemSetTagTkn = GetFirstSetTag(oItem);
+    while(sItemSetTagTkn.sCurrentTag != ""){
+        if(sSetTag == sItemSetTagTkn.sCurrentTag)
             return TRUE;
-        sItemSetTag = getNextSetTag(oItem);
-        trace(sItemSetTag);
+        sItemSetTagTkn = GetNextSetTag(sItemSetTagTkn);
     }
     return FALSE;
 }
 
-int GetNumberOfSetItemsEquiped(struct EquipedItems equipedItems, string sSetItemTagVarName, string sSetTag)
+int GetSetTagId(object oItem, string sSetTag)
+{
+    struct ItemSetTagTokenizer sItemSetTagTkn = GetFirstSetTag(oItem);
+    while(sItemSetTagTkn.sCurrentTag != ""){
+        if(sSetTag == sItemSetTagTkn.sCurrentTag)
+            return sItemSetTagTkn.iSetTagIndex - 1; //Will have been incremented by last GetNextSetTag call.
+        sItemSetTagTkn = GetNextSetTag(sItemSetTagTkn);
+    }
+    return -1; //Not found.
+}
+
+int GetNumberOfSetItemsEquiped(struct EquipedItems equipedItems, string sSetTag)
 {
     int iSetItemsEquiped = 0;
     //Check every other item for belonging to the same set
@@ -580,15 +595,23 @@ struct SetItemPropArguments GetItemPropArgumentsThreeArgs(
 // R  RR ee   ddd ooo SSSS  ee   tt BBBB  ooo n  n  uuu ss  ee  ss       f   uuu n  n  ccc  tt ii ooo n  n ss
 
 // Redo the set bonuses on a single item.
-void RedoSetItemBonuses(object oItem, string sSetItemTagVarName, string sSetTag, int iSetItemsEquiped)
+void RedoSetItemBonuses(object oItem, string sSetTag, int iSetItemsEquiped)
 {
+    if(!TestItemBelongsToSet(oItem, sSetTag)){
+        trace("Skipping non set item "+GetTag(oItem));
+        return; //If this item isn't a part of the set, just drop out of this function.
+    }
+
+    string sSetItemTagVarName = SetItemTagVarName(
+        GetSetTagId(oItem, sSetTag)
+    );
     int iBonusId = 0;
     string sSetBonusPrefix = sSetItemTagVarName + "_BONUS_" + IntToString(iBonusId);
     string sSetPropertyBounsType = GetLocalString(
         oItem,
         sSetBonusPrefix + "_TYPE"
     );
-    debug(
+    trace(
         "sSetBonusPrefix: " + sSetBonusPrefix
     );
     debug(
@@ -2213,25 +2236,25 @@ void RedoSetItemBonuses(object oItem, string sSetItemTagVarName, string sSetTag,
     }
 }
 
-void RedoEquipedSetItemsBonuses(struct EquipedItems equipedItems, string sSetItemTagVarName, string sSetTag, int iSetItemsCount)
+void RedoEquipedSetItemsBonuses(struct EquipedItems equipedItems, string sSetTag, int iSetItemsCount)
 {
     debug("Redoing equiped items set bonuses for set " + sSetTag + " to bonus lvl " + IntToString(iSetItemsCount));
-    RedoSetItemBonuses(equipedItems.oArms, sSetItemTagVarName, sSetTag, iSetItemsCount);
-    RedoSetItemBonuses(equipedItems.oArrows, sSetItemTagVarName, sSetTag, iSetItemsCount);
-    RedoSetItemBonuses(equipedItems.oBelt, sSetItemTagVarName, sSetTag, iSetItemsCount);
-    RedoSetItemBonuses(equipedItems.oBolts, sSetItemTagVarName, sSetTag, iSetItemsCount);
-    RedoSetItemBonuses(equipedItems.oBoots, sSetItemTagVarName, sSetTag, iSetItemsCount);
-    RedoSetItemBonuses(equipedItems.oBullets, sSetItemTagVarName, sSetTag, iSetItemsCount);
-    RedoSetItemBonuses(equipedItems.oCarmour, sSetItemTagVarName, sSetTag, iSetItemsCount);
-    RedoSetItemBonuses(equipedItems.oChest, sSetItemTagVarName, sSetTag, iSetItemsCount);
-    RedoSetItemBonuses(equipedItems.oCloak, sSetItemTagVarName, sSetTag, iSetItemsCount);
-    RedoSetItemBonuses(equipedItems.oCweaponb, sSetItemTagVarName, sSetTag, iSetItemsCount);
-    RedoSetItemBonuses(equipedItems.oCweaponl, sSetItemTagVarName, sSetTag, iSetItemsCount);
-    RedoSetItemBonuses(equipedItems.oCweaponr, sSetItemTagVarName, sSetTag, iSetItemsCount);
-    RedoSetItemBonuses(equipedItems.oHead, sSetItemTagVarName, sSetTag, iSetItemsCount);
-    RedoSetItemBonuses(equipedItems.oLefthand, sSetItemTagVarName, sSetTag, iSetItemsCount);
-    RedoSetItemBonuses(equipedItems.oLeftring, sSetItemTagVarName, sSetTag, iSetItemsCount);
-    RedoSetItemBonuses(equipedItems.oNeck, sSetItemTagVarName, sSetTag, iSetItemsCount);
-    RedoSetItemBonuses(equipedItems.oRighthand, sSetItemTagVarName, sSetTag, iSetItemsCount);
-    RedoSetItemBonuses(equipedItems.oRightring, sSetItemTagVarName, sSetTag, iSetItemsCount);
+    RedoSetItemBonuses(equipedItems.oArms, sSetTag, iSetItemsCount);
+    RedoSetItemBonuses(equipedItems.oArrows, sSetTag, iSetItemsCount);
+    RedoSetItemBonuses(equipedItems.oBelt, sSetTag, iSetItemsCount);
+    RedoSetItemBonuses(equipedItems.oBolts, sSetTag, iSetItemsCount);
+    RedoSetItemBonuses(equipedItems.oBoots, sSetTag, iSetItemsCount);
+    RedoSetItemBonuses(equipedItems.oBullets, sSetTag, iSetItemsCount);
+    RedoSetItemBonuses(equipedItems.oCarmour, sSetTag, iSetItemsCount);
+    RedoSetItemBonuses(equipedItems.oChest, sSetTag, iSetItemsCount);
+    RedoSetItemBonuses(equipedItems.oCloak, sSetTag, iSetItemsCount);
+    RedoSetItemBonuses(equipedItems.oCweaponb, sSetTag, iSetItemsCount);
+    RedoSetItemBonuses(equipedItems.oCweaponl, sSetTag, iSetItemsCount);
+    RedoSetItemBonuses(equipedItems.oCweaponr, sSetTag, iSetItemsCount);
+    RedoSetItemBonuses(equipedItems.oHead, sSetTag, iSetItemsCount);
+    RedoSetItemBonuses(equipedItems.oLefthand, sSetTag, iSetItemsCount);
+    RedoSetItemBonuses(equipedItems.oLeftring, sSetTag, iSetItemsCount);
+    RedoSetItemBonuses(equipedItems.oNeck, sSetTag, iSetItemsCount);
+    RedoSetItemBonuses(equipedItems.oRighthand, sSetTag, iSetItemsCount);
+    RedoSetItemBonuses(equipedItems.oRightring, sSetTag, iSetItemsCount);
 }
