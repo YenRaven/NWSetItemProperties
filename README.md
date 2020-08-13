@@ -58,11 +58,104 @@ This instructs the script to apply the `ITEM_PROPERTY_LIGHT` effect to **this** 
 
 And thats it!  Now when this item is equiped with another item with the same set tag, an extra property applying a dim red glow will be applied!  And when any item belonging to the set is unequiped, bringing the set bonus below the min set items for this prop, it will be removed!
 
+Note that set item bonuses will only work on player characters, not npcs or monsters.  If you want to have a character wearing the set that will drop when defeated, I'd recommend useing a custom creature skin to simulate the set effects on the npc.
+
 One last point,  the numeric parts of the variable name template are 0 indexed and sequencial so to add the same item to another set, you would use the prefix `SET_TAG_1` or to add a new set bonus `_BONUS_1`.  Combinations of these can be used to setup multi set bonuses and to setup teird bonuses to be applied as a person aquires more and more set items!  Experiment and have fun (and report bugs here on github when you run into them)!
+
+# Examples
+
+## Incremental set bonuses on one item
+This is a set that will apply bonus fire damage to the weapon when 2 set items are equiped and increased enhancement when a 3rd set item is equiped.
+
+#### Weapon Variables
+|Name|Type|Value|
+|----|----|----|
+|SET_TAG_0|`string`|FIRE_SET|
+|SET_TAG_0_BONUS_0_TYPE|`string`|ITEM_PROPERTY_DAMAGE_BONUS|
+|SET_TAG_0_BONUS_0_MIN_SET_ITEMS|`int`|2|
+|SET_TAG_0_BONUS_0_DAMAGE_TYPE|`int`|10|
+|SET_TAG_0_BONUS_0_DAMAGE_BONUS|`int`|14|
+|SET_TAG_0_BONUS_1_TYPE|`string`|ITEM_PROPERTY_ENHANCEMENT_BONUS|
+|SET_TAG_0_BONUS_1_MIN_SET_ITEMS|`int`|3|
+|SET_TAG_0_BONUS_1_ENHANCEMENT_BONUS|`int`|5|
+
+#### Variables on the two other set items.
+|Name|Type|Value|
+|----|----|----|
+|SET_TAG_0|`string`|FIRE_SET|
+
+## Increasng weapon enhancement bonus for each set item equiped.
+This set will apply an extra +1 enhancement to the weapon for each set item equiped up to +5
+
+#### Weapon Variables
+|Name|Type|Value|
+|----|----|----|
+|SET_TAG_0|`string`|ENHANCEMENT_SET|
+|SET_TAG_0_BONUS_0_TYPE|`string`|ITEM_PROPERTY_ENHANCEMENT_BONUS|
+|SET_TAG_0_BONUS_0_MIN_SET_ITEMS|`int`|2|
+|SET_TAG_0_BONUS_0_ENHANCEMENT_BONUS|`int`|1|
+|SET_TAG_0_BONUS_1_TYPE|`string`|ITEM_PROPERTY_ENHANCEMENT_BONUS|
+|SET_TAG_0_BONUS_1_MIN_SET_ITEMS|`int`|3|
+|SET_TAG_0_BONUS_1_ENHANCEMENT_BONUS|`int`|2|
+|SET_TAG_0_BONUS_2_TYPE|`string`|ITEM_PROPERTY_ENHANCEMENT_BONUS|
+|SET_TAG_0_BONUS_2_MIN_SET_ITEMS|`int`|4|
+|SET_TAG_0_BONUS_2_ENHANCEMENT_BONUS|`int`|3|
+|SET_TAG_0_BONUS_3_TYPE|`string`|ITEM_PROPERTY_ENHANCEMENT_BONUS|
+|SET_TAG_0_BONUS_3_MIN_SET_ITEMS|`int`|5|
+|SET_TAG_0_BONUS_3_ENHANCEMENT_BONUS|`int`|4|
+|SET_TAG_0_BONUS_4_TYPE|`string`|ITEM_PROPERTY_ENHANCEMENT_BONUS|
+|SET_TAG_0_BONUS_4_MIN_SET_ITEMS|`int`|6|
+|SET_TAG_0_BONUS_4_ENHANCEMENT_BONUS|`int`|5|
+
+#### Variables on the two other set items.
+|Name|Type|Value|
+|----|----|----|
+|SET_TAG_0|`string`|ENHANCEMENT_SET|
+
+## Armor, helm, and wepon set where the weapon is nerfed if equiped with the helm.
+This set will give a +10 enhancement bonus to the weapon and a +5 AC bonus when the weapon and armor are equiped.
+It will give a +5 AC bonus the the helm and a +5 Regeneration to the armor when both the armor and helm are equiped.
+But it will give a -5 Decreased enhancement bonus to the weapon if the weapon and the helm are equiped at the same time.
+
+#### Weapon Variables
+|Name|Type|Value|
+|----|----|----|
+|SET_TAG_0|`string`|ARMOR_WEAP_SET|
+|SET_TAG_0_BONUS_0_TYPE|`string`|ITEM_PROPERTY_ENHANCEMENT_BONUS|
+|SET_TAG_0_BONUS_0_MIN_SET_ITEMS|`int`|2|
+|SET_TAG_0_BONUS_0_ENHANCEMENT_BONUS|`int`|10|
+|SET_TAG_1|`string`|HELM_WEAP_SET|
+|SET_TAG_1_BONUS_0_TYPE|`string`|ITEM_PROPERTY_DECREASED_ENHANCEMENT_MODIFIER|
+|SET_TAG_1_BONUS_0_MIN_SET_ITEMS|`int`|2|
+|SET_TAG_1_BONUS_0_DECREASED_ENHANCEMENT_MODIFIER|`int`|5|
+
+#### Helm Variables
+|Name|Type|Value|
+|----|----|----|
+|SET_TAG_0|`string`|ARMOR_HELM_SET|
+|SET_TAG_0_BONUS_0_TYPE|`string`|ITEM_PROPERTY_AC_BONUS|
+|SET_TAG_0_BONUS_0_MIN_SET_ITEMS|`int`|2|
+|SET_TAG_0_BONUS_0_VALUE|`int`|5|
+|SET_TAG_1|`string`|HELM_WEAP_SET|
+
+#### Armor Variables
+|Name|Type|Value|
+|----|----|----|
+|SET_TAG_0|`string`|ARMOR_HELM_SET|
+|SET_TAG_0_BONUS_0_TYPE|`string`|ITEM_PROPERTY_REGENERATION|
+|SET_TAG_0_BONUS_0_MIN_SET_ITEMS|`int`|2|
+|SET_TAG_0_BONUS_0_REGENERATION|`int`|5|
+|SET_TAG_1|`string`|ARMOR_WEAP_SET|
+|SET_TAG_1_BONUS_0_TYPE|`string`|ITEM_PROPERTY_AC_BONUS|
+|SET_TAG_1_BONUS_0_MIN_SET_ITEMS|`int`|2|
+|SET_TAG_1_BONUS_0_VALUE|`int`|5|
+
 
 # Special Properties
 
 The following information is auto generated from the code.  Until I can go through and flush out the various descriptions and such, you can find more info about the special props by going to https://nwnlexicon.com/index.php?title=Item_property and following the link to the various **IP Functions** for the ITEM_PROPERTY you are looking for.
+
+These properties are applied to **the item on which they are defined** always.  So you cant give a weapon an enhancement bonus by applying that bonus to the armor of the set or something like that.  The nature of these bonses can cause them to do different things on different base item types.  For example, on armor ONHITCASTSPELL causes the selected spell to be cast when the player is hit.  While on a weapon it causes the spell to be cast when the player hits something with the weapon.
 
 #### ITEM_PROPERTY_ABILITY_BONUS
 | Special Prop | Range | Description |
