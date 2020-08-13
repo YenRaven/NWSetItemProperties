@@ -107,7 +107,7 @@ This set will apply an extra +1 enhancement to the weapon for each set item equi
 |SET_TAG_0_BONUS_4_MIN_SET_ITEMS|`int`|6|
 |SET_TAG_0_BONUS_4_ENHANCEMENT_BONUS|`int`|5|
 
-#### Variables on the two other set items.
+#### Variables on the other set items.
 |Name|Type|Value|
 |----|----|----|
 |SET_TAG_0|`string`|ENHANCEMENT_SET|
