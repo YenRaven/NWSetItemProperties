@@ -4,7 +4,7 @@ Adds a wrapper for the OnPlayerEquipItem and OnPlayerUnEquipItem module event sc
 ![Capture of example properties](Capture.PNG)
 
 # Getting Started
-Download the `.nss` files in this repo and add them to your module.
+Download the `.erf` from https://neverwintervault.org/project/nwn1/script/nwsetitemproperties or the `.nss` files in this repo and import them to your module.
 `set_items_equ.nss` should be added as the `OnPlayerEquipItem` module script.
 `set_items_ueq.nss` should be added as the `OnPlayerUnEquipItem` module script.
 
