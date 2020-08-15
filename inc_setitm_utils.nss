@@ -685,6 +685,7 @@ void RedoSetItemBonuses(object oItem, string sSetTag, int iSetItemsEquiped)
         );
 
         int iAllowMultipleProps = FALSE; //Set this to true to use AddItemProperty instead of IPSafeAddItemProp in cases where more than one prop of a type can be added to an item, such as bonus spell slots.
+        int iIgnoreSubType = FALSE;
         if(iSetItemsEquiped >= iSetBounsMinSetItems){
             itemproperty ipNewBonus;
             int iSetPropertyBonusType = GetItemPropertyConstFromSetPropertyType(sSetPropertyBounsType);
@@ -1944,8 +1945,7 @@ void RedoSetItemBonuses(object oItem, string sSetTag, int iSetItemsEquiped)
                         ),
                         sSetBonusPrefix
                     );
-                   if(!GetReplaceOrAddProp(oItem, sSetBonusPrefix))
-                        iAllowMultipleProps = TRUE;
+                    iIgnoreSubType = TRUE;
                 break;
 
                 case ITEM_PROPERTY_POISON :
@@ -2339,16 +2339,26 @@ void RedoSetItemBonuses(object oItem, string sSetTag, int iSetItemsEquiped)
                 default:
                     error("Error! Set property Unrecognized: " + sSetPropertyBounsType);
             }
+            
+            debug("ITEM PROPERTY TYPE:" + IntToString(GetItemPropertyType(ipNewBonus)));
+            debug("ITEM PROPERTY SUB TYPE:" + IntToString(GetItemPropertySubType(ipNewBonus)));
             if(iAllowMultipleProps){
-                AddItemProperty(
-                    DURATION_TYPE_PERMANENT,
+                IPSafeAddItemProperty(
+                    oItem,
                     ipNewBonus,
-                    oItem
+                    0.0,
+                    X2_IP_ADDPROP_POLICY_IGNORE_EXISTING,
+                    FALSE,
+                    iIgnoreSubType
                 );
             }else{
                 IPSafeAddItemProperty(
                     oItem,
-                    ipNewBonus
+                    ipNewBonus,
+                    0.0,
+                    X2_IP_ADDPROP_POLICY_REPLACE_EXISTING,
+                    FALSE,
+                    iIgnoreSubType
                 );
             }
         }else{
