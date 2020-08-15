@@ -150,6 +150,24 @@ But it will give a -5 Decreased enhancement bonus to the weapon if the weapon an
 |SET_TAG_1_BONUS_0_MIN_SET_ITEMS|`int`|2|
 |SET_TAG_1_BONUS_0_VALUE|`int`|5|
 
+# Variable name template.
+
+The variable names consist of three parts, the Tag prefix, the Bonus infix, and the Property suffix. Every variable besides the set tag name is made up of all three of these parts and will be arranged like so: `[set tag prefix][bonus infix][property suffix]` e.g. `SET_TAG_0_BONUS_0_TYPE`
+
+The prefix is the set tag variable name and is structured like so:
+`SET_TAG_#` where the # is a number starting at 0 and incrementing by 1 for each set tag applied to the item.  In this way you can have one item that belongs to several sets.
+
+The infix is the Bonus identifying part of the variable and is structured like so:
+`_BONUS_#` where the # is another number starting at 0 and incrementing by 1 for each bonus that should be applied as part of this set to **this** item.  By icrementing the number, you can apply several bonuses to one item under various conditions.
+
+The suffix is the properties of the bonus to be applied and is structured in various ways depending on what property is to be applied but all bonuses must have the following property suffixs supplied.
+
+1. `_TYPE` to specify the **ITEM_PROPERTY_** value that will determin the effect of the bonus.
+2. `_MIN_SET_ITEMS` to specify the minimum number of items of the set that must be equiped in order to recieve the bonus
+
+Another prop suffix that can be applied is the `_REPLACE` suffix.  This is a special prop that augments how properties are applied to an item.  Some item props are able to be applied over and over.  For example Bonuse spell slots.  You can apply several of these as a set bonus at one time, however it may be that you intend for a future application of the property to replace the prio ones, for example if you have more set items equiped, you may want to increase the range of the bonus spell slots.  the `_REPLACE` flag will cause the bonus that is is assigned to to remove all prior instances of that bonus from the item before applying itself.
+
+All the other suffixs are detailed below.
 
 # Special Properties
 

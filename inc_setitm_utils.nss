@@ -2,89 +2,89 @@
 #include "x2_inc_itemprop"
 
 //Consts for the translation of ITEM_PROPERTY_* const names into their value.  So these can be defined by name in item prop variables instead of ints.
-const string SET_PROPERTY_TYPE_ABILITY_BONUS                = "ITEM_PROPERTY_ABILITY_BONUS";
-const string SET_PROPERTY_TYPE_AC_BONUS                     = "ITEM_PROPERTY_AC_BONUS";
-const string SET_PROPERTY_TYPE_AC_BONUS_VS_ALIGNMENT_GROUP  = "ITEM_PROPERTY_AC_BONUS_VS_ALIGNMENT_GROUP";
-const string SET_PROPERTY_TYPE_AC_BONUS_VS_DAMAGE_TYPE      = "ITEM_PROPERTY_AC_BONUS_VS_DAMAGE_TYPE";
-const string SET_PROPERTY_TYPE_AC_BONUS_VS_RACIAL_GROUP     = "ITEM_PROPERTY_AC_BONUS_VS_RACIAL_GROUP";
-const string SET_PROPERTY_TYPE_AC_BONUS_VS_SPECIFIC_ALIGNMENT = "ITEM_PROPERTY_AC_BONUS_VS_SPECIFIC_ALIGNMENT";
-const string SET_PROPERTY_TYPE_ADDITIONAL                   = "ITEM_PROPERTY_ADDITIONAL";
-const string SET_PROPERTY_TYPE_ARCANE_SPELL_FAILURE         = "ITEM_PROPERTY_ARCANE_SPELL_FAILURE";
-const string SET_PROPERTY_TYPE_ATTACK_BONUS                 = "ITEM_PROPERTY_ATTACK_BONUS";
-const string SET_PROPERTY_TYPE_ATTACK_BONUS_VS_ALIGNMENT_GROUP = "ITEM_PROPERTY_ATTACK_BONUS_VS_ALIGNMENT_GROUP";
-const string SET_PROPERTY_TYPE_ATTACK_BONUS_VS_RACIAL_GROUP = "ITEM_PROPERTY_ATTACK_BONUS_VS_RACIAL_GROUP";
-const string SET_PROPERTY_TYPE_ATTACK_BONUS_VS_SPECIFIC_ALIGNMENT = "ITEM_PROPERTY_ATTACK_BONUS_VS_SPECIFIC_ALIGNMENT";
-const string SET_PROPERTY_TYPE_BASE_ITEM_WEIGHT_REDUCTION   = "ITEM_PROPERTY_BASE_ITEM_WEIGHT_REDUCTION";
-const string SET_PROPERTY_TYPE_BONUS_FEAT                   = "ITEM_PROPERTY_BONUS_FEAT";
-const string SET_PROPERTY_TYPE_BONUS_SPELL_SLOT_OF_LEVEL_N  = "ITEM_PROPERTY_BONUS_SPELL_SLOT_OF_LEVEL_N";
-const string SET_PROPERTY_TYPE_CAST_SPELL                   = "ITEM_PROPERTY_CAST_SPELL";
-const string SET_PROPERTY_TYPE_DAMAGE_BONUS                 = "ITEM_PROPERTY_DAMAGE_BONUS";
-const string SET_PROPERTY_TYPE_DAMAGE_BONUS_VS_ALIGNMENT_GROUP = "ITEM_PROPERTY_DAMAGE_BONUS_VS_ALIGNMENT_GROUP";
-const string SET_PROPERTY_TYPE_DAMAGE_BONUS_VS_RACIAL_GROUP = "ITEM_PROPERTY_DAMAGE_BONUS_VS_RACIAL_GROUP";
-const string SET_PROPERTY_TYPE_DAMAGE_BONUS_VS_SPECIFIC_ALIGNMENT = "ITEM_PROPERTY_DAMAGE_BONUS_VS_SPECIFIC_ALIGNMENT";
-const string SET_PROPERTY_TYPE_DAMAGE_REDUCTION             = "ITEM_PROPERTY_DAMAGE_REDUCTION";
-const string SET_PROPERTY_TYPE_DAMAGE_RESISTANCE            = "ITEM_PROPERTY_DAMAGE_RESISTANCE";
-const string SET_PROPERTY_TYPE_DAMAGE_VULNERABILITY         = "ITEM_PROPERTY_DAMAGE_VULNERABILITY";
-const string SET_PROPERTY_TYPE_DARKVISION                   = "ITEM_PROPERTY_DARKVISION";
-const string SET_PROPERTY_TYPE_DECREASED_ABILITY_SCORE      = "ITEM_PROPERTY_DECREASED_ABILITY_SCORE";
-const string SET_PROPERTY_TYPE_DECREASED_AC                 = "ITEM_PROPERTY_DECREASED_AC";
-const string SET_PROPERTY_TYPE_DECREASED_ATTACK_MODIFIER    = "ITEM_PROPERTY_DECREASED_ATTACK_MODIFIER";
-const string SET_PROPERTY_TYPE_DECREASED_DAMAGE             = "ITEM_PROPERTY_DECREASED_DAMAGE";
-const string SET_PROPERTY_TYPE_DECREASED_ENHANCEMENT_MODIFIER = "ITEM_PROPERTY_DECREASED_ENHANCEMENT_MODIFIER";
-const string SET_PROPERTY_TYPE_DECREASED_SAVING_THROWS      = "ITEM_PROPERTY_DECREASED_SAVING_THROWS";
-const string SET_PROPERTY_TYPE_DECREASED_SAVING_THROWS_SPECIFIC = "ITEM_PROPERTY_DECREASED_SAVING_THROWS_SPECIFIC";
-const string SET_PROPERTY_TYPE_DECREASED_SKILL_MODIFIER     = "ITEM_PROPERTY_DECREASED_SKILL_MODIFIER";
-const string SET_PROPERTY_TYPE_ENHANCED_CONTAINER_REDUCED_WEIGHT = "ITEM_PROPERTY_ENHANCED_CONTAINER_REDUCED_WEIGHT";
-const string SET_PROPERTY_TYPE_ENHANCEMENT_BONUS            = "ITEM_PROPERTY_ENHANCEMENT_BONUS";
-const string SET_PROPERTY_TYPE_ENHANCEMENT_BONUS_VS_ALIGNMENT_GROUP = "ITEM_PROPERTY_ENHANCEMENT_BONUS_VS_ALIGNMENT_GROUP";
-const string SET_PROPERTY_TYPE_ENHANCEMENT_BONUS_VS_RACIAL_GROUP = "ITEM_PROPERTY_ENHANCEMENT_BONUS_VS_RACIAL_GROUP";
-const string SET_PROPERTY_TYPE_ENHANCEMENT_BONUS_VS_SPECIFIC_ALIGNEMENT = "ITEM_PROPERTY_ENHANCEMENT_BONUS_VS_SPECIFIC_ALIGNEMENT";
-const string SET_PROPERTY_TYPE_EXTRA_MELEE_DAMAGE_TYPE      = "ITEM_PROPERTY_EXTRA_MELEE_DAMAGE_TYPE";
-const string SET_PROPERTY_TYPE_EXTRA_RANGED_DAMAGE_TYPE     = "ITEM_PROPERTY_EXTRA_RANGED_DAMAGE_TYPE";
-const string SET_PROPERTY_TYPE_FREEDOM_OF_MOVEMENT          = "ITEM_PROPERTY_FREEDOM_OF_MOVEMENT";
-const string SET_PROPERTY_TYPE_HASTE                        = "ITEM_PROPERTY_HASTE";
-const string SET_PROPERTY_TYPE_HEALERS_KIT                  = "ITEM_PROPERTY_HEALERS_KIT";
-const string SET_PROPERTY_TYPE_HOLY_AVENGER                 = "ITEM_PROPERTY_HOLY_AVENGER";
-const string SET_PROPERTY_TYPE_IMMUNITY_DAMAGE_TYPE         = "ITEM_PROPERTY_IMMUNITY_DAMAGE_TYPE";
-const string SET_PROPERTY_TYPE_IMMUNITY_MISCELLANEOUS       = "ITEM_PROPERTY_IMMUNITY_MISCELLANEOUS";
-const string SET_PROPERTY_TYPE_IMMUNITY_SPECIFIC_SPELL      = "ITEM_PROPERTY_IMMUNITY_SPECIFIC_SPELL";
-const string SET_PROPERTY_TYPE_IMMUNITY_SPELL_SCHOOL        = "ITEM_PROPERTY_IMMUNITY_SPELL_SCHOOL";
-const string SET_PROPERTY_TYPE_IMMUNITY_SPELLS_BY_LEVEL     = "ITEM_PROPERTY_IMMUNITY_SPELLS_BY_LEVEL";
-const string SET_PROPERTY_TYPE_IMPROVED_EVASION             = "ITEM_PROPERTY_IMPROVED_EVASION";
-const string SET_PROPERTY_TYPE_KEEN                         = "ITEM_PROPERTY_KEEN";
-const string SET_PROPERTY_TYPE_LIGHT                        = "ITEM_PROPERTY_LIGHT";
-const string SET_PROPERTY_TYPE_MASSIVE_CRITICALS            = "ITEM_PROPERTY_MASSIVE_CRITICALS";
-const string SET_PROPERTY_TYPE_MATERIAL                     = "ITEM_PROPERTY_MATERIAL";
-const string SET_PROPERTY_TYPE_MIGHTY                       = "ITEM_PROPERTY_MIGHTY";
-const string SET_PROPERTY_TYPE_MIND_BLANK                   = "ITEM_PROPERTY_MIND_BLANK";
-const string SET_PROPERTY_TYPE_MONSTER_DAMAGE               = "ITEM_PROPERTY_MONSTER_DAMAGE";
-const string SET_PROPERTY_TYPE_NO_DAMAGE                    = "ITEM_PROPERTY_NO_DAMAGE";
-const string SET_PROPERTY_TYPE_ON_HIT_PROPERTIES            = "ITEM_PROPERTY_ON_HIT_PROPERTIES";
-const string SET_PROPERTY_TYPE_ON_MONSTER_HIT               = "ITEM_PROPERTY_ON_MONSTER_HIT";
-const string SET_PROPERTY_TYPE_ONHITCASTSPELL               = "ITEM_PROPERTY_ONHITCASTSPELL";
-const string SET_PROPERTY_TYPE_POISON                       = "ITEM_PROPERTY_POISON";
-const string SET_PROPERTY_TYPE_QUALITY                      = "ITEM_PROPERTY_QUALITY";
-const string SET_PROPERTY_TYPE_REGENERATION                 = "ITEM_PROPERTY_REGENERATION";
-const string SET_PROPERTY_TYPE_REGENERATION_VAMPIRIC        = "ITEM_PROPERTY_REGENERATION_VAMPIRIC";
-const string SET_PROPERTY_TYPE_SAVING_THROW_BONUS           = "ITEM_PROPERTY_SAVING_THROW_BONUS";
-const string SET_PROPERTY_TYPE_SAVING_THROW_BONUS_SPECIFIC  = "ITEM_PROPERTY_SAVING_THROW_BONUS_SPECIFIC";
-const string SET_PROPERTY_TYPE_SKILL_BONUS                  = "ITEM_PROPERTY_SKILL_BONUS";
-const string SET_PROPERTY_TYPE_SPECIAL_WALK                 = "ITEM_PROPERTY_SPECIAL_WALK";
-const string SET_PROPERTY_TYPE_SPELL_RESISTANCE             = "ITEM_PROPERTY_SPELL_RESISTANCE";
-const string SET_PROPERTY_TYPE_THIEVES_TOOLS                = "ITEM_PROPERTY_THIEVES_TOOLS";
-const string SET_PROPERTY_TYPE_TRAP                         = "ITEM_PROPERTY_TRAP";
-const string SET_PROPERTY_TYPE_TRUE_SEEING                  = "ITEM_PROPERTY_TRUE_SEEING";
-const string SET_PROPERTY_TYPE_TURN_RESISTANCE              = "ITEM_PROPERTY_TURN_RESISTANCE";
-const string SET_PROPERTY_TYPE_UNLIMITED_AMMUNITION         = "ITEM_PROPERTY_UNLIMITED_AMMUNITION";
-const string SET_PROPERTY_TYPE_USE_LIMITATION_ALIGNMENT_GROUP = "ITEM_PROPERTY_USE_LIMITATION_ALIGNMENT_GROUP";
-const string SET_PROPERTY_TYPE_USE_LIMITATION_CLASS         = "ITEM_PROPERTY_USE_LIMITATION_CLASS";
-const string SET_PROPERTY_TYPE_USE_LIMITATION_RACIAL_TYPE   = "ITEM_PROPERTY_USE_LIMITATION_RACIAL_TYPE";
-const string SET_PROPERTY_TYPE_USE_LIMITATION_SPECIFIC_ALIGNMENT = "ITEM_PROPERTY_USE_LIMITATION_SPECIFIC_ALIGNMENT";
-const string SET_PROPERTY_TYPE_USE_LIMITATION_TILESET       = "ITEM_PROPERTY_USE_LIMITATION_TILESET";
-const string SET_PROPERTY_TYPE_VISUALEFFECT                 = "ITEM_PROPERTY_VISUALEFFECT";
-const string SET_PROPERTY_TYPE_WEIGHT_INCREASE              = "ITEM_PROPERTY_WEIGHT_INCREASE";
+const string SET_PROPERTY_TYPE_ABILITY_BONUS                              = "ITEM_PROPERTY_ABILITY_BONUS";
+const string SET_PROPERTY_TYPE_AC_BONUS                                   = "ITEM_PROPERTY_AC_BONUS";
+const string SET_PROPERTY_TYPE_AC_BONUS_VS_ALIGNMENT_GROUP                = "ITEM_PROPERTY_AC_BONUS_VS_ALIGNMENT_GROUP";
+const string SET_PROPERTY_TYPE_AC_BONUS_VS_DAMAGE_TYPE                    = "ITEM_PROPERTY_AC_BONUS_VS_DAMAGE_TYPE";
+const string SET_PROPERTY_TYPE_AC_BONUS_VS_RACIAL_GROUP                   = "ITEM_PROPERTY_AC_BONUS_VS_RACIAL_GROUP";
+const string SET_PROPERTY_TYPE_AC_BONUS_VS_SPECIFIC_ALIGNMENT             = "ITEM_PROPERTY_AC_BONUS_VS_SPECIFIC_ALIGNMENT";
+const string SET_PROPERTY_TYPE_ADDITIONAL                                 = "ITEM_PROPERTY_ADDITIONAL";
+const string SET_PROPERTY_TYPE_ARCANE_SPELL_FAILURE                       = "ITEM_PROPERTY_ARCANE_SPELL_FAILURE";
+const string SET_PROPERTY_TYPE_ATTACK_BONUS                               = "ITEM_PROPERTY_ATTACK_BONUS";
+const string SET_PROPERTY_TYPE_ATTACK_BONUS_VS_ALIGNMENT_GROUP            = "ITEM_PROPERTY_ATTACK_BONUS_VS_ALIGNMENT_GROUP";
+const string SET_PROPERTY_TYPE_ATTACK_BONUS_VS_RACIAL_GROUP               = "ITEM_PROPERTY_ATTACK_BONUS_VS_RACIAL_GROUP";
+const string SET_PROPERTY_TYPE_ATTACK_BONUS_VS_SPECIFIC_ALIGNMENT         = "ITEM_PROPERTY_ATTACK_BONUS_VS_SPECIFIC_ALIGNMENT";
+const string SET_PROPERTY_TYPE_BASE_ITEM_WEIGHT_REDUCTION                 = "ITEM_PROPERTY_BASE_ITEM_WEIGHT_REDUCTION";
+const string SET_PROPERTY_TYPE_BONUS_FEAT                                 = "ITEM_PROPERTY_BONUS_FEAT";
+const string SET_PROPERTY_TYPE_BONUS_SPELL_SLOT_OF_LEVEL_N                = "ITEM_PROPERTY_BONUS_SPELL_SLOT_OF_LEVEL_N";
+const string SET_PROPERTY_TYPE_CAST_SPELL                                 = "ITEM_PROPERTY_CAST_SPELL";
+const string SET_PROPERTY_TYPE_DAMAGE_BONUS                               = "ITEM_PROPERTY_DAMAGE_BONUS";
+const string SET_PROPERTY_TYPE_DAMAGE_BONUS_VS_ALIGNMENT_GROUP            = "ITEM_PROPERTY_DAMAGE_BONUS_VS_ALIGNMENT_GROUP";
+const string SET_PROPERTY_TYPE_DAMAGE_BONUS_VS_RACIAL_GROUP               = "ITEM_PROPERTY_DAMAGE_BONUS_VS_RACIAL_GROUP";
+const string SET_PROPERTY_TYPE_DAMAGE_BONUS_VS_SPECIFIC_ALIGNMENT         = "ITEM_PROPERTY_DAMAGE_BONUS_VS_SPECIFIC_ALIGNMENT";
+const string SET_PROPERTY_TYPE_DAMAGE_REDUCTION                           = "ITEM_PROPERTY_DAMAGE_REDUCTION";
+const string SET_PROPERTY_TYPE_DAMAGE_RESISTANCE                          = "ITEM_PROPERTY_DAMAGE_RESISTANCE";
+const string SET_PROPERTY_TYPE_DAMAGE_VULNERABILITY                       = "ITEM_PROPERTY_DAMAGE_VULNERABILITY";
+const string SET_PROPERTY_TYPE_DARKVISION                                 = "ITEM_PROPERTY_DARKVISION";
+const string SET_PROPERTY_TYPE_DECREASED_ABILITY_SCORE                    = "ITEM_PROPERTY_DECREASED_ABILITY_SCORE";
+const string SET_PROPERTY_TYPE_DECREASED_AC                               = "ITEM_PROPERTY_DECREASED_AC";
+const string SET_PROPERTY_TYPE_DECREASED_ATTACK_MODIFIER                  = "ITEM_PROPERTY_DECREASED_ATTACK_MODIFIER";
+const string SET_PROPERTY_TYPE_DECREASED_DAMAGE                           = "ITEM_PROPERTY_DECREASED_DAMAGE";
+const string SET_PROPERTY_TYPE_DECREASED_ENHANCEMENT_MODIFIER             = "ITEM_PROPERTY_DECREASED_ENHANCEMENT_MODIFIER";
+const string SET_PROPERTY_TYPE_DECREASED_SAVING_THROWS                    = "ITEM_PROPERTY_DECREASED_SAVING_THROWS";
+const string SET_PROPERTY_TYPE_DECREASED_SAVING_THROWS_SPECIFIC           = "ITEM_PROPERTY_DECREASED_SAVING_THROWS_SPECIFIC";
+const string SET_PROPERTY_TYPE_DECREASED_SKILL_MODIFIER                   = "ITEM_PROPERTY_DECREASED_SKILL_MODIFIER";
+const string SET_PROPERTY_TYPE_ENHANCED_CONTAINER_REDUCED_WEIGHT          = "ITEM_PROPERTY_ENHANCED_CONTAINER_REDUCED_WEIGHT";
+const string SET_PROPERTY_TYPE_ENHANCEMENT_BONUS                          = "ITEM_PROPERTY_ENHANCEMENT_BONUS";
+const string SET_PROPERTY_TYPE_ENHANCEMENT_BONUS_VS_ALIGNMENT_GROUP       = "ITEM_PROPERTY_ENHANCEMENT_BONUS_VS_ALIGNMENT_GROUP";
+const string SET_PROPERTY_TYPE_ENHANCEMENT_BONUS_VS_RACIAL_GROUP          = "ITEM_PROPERTY_ENHANCEMENT_BONUS_VS_RACIAL_GROUP";
+const string SET_PROPERTY_TYPE_ENHANCEMENT_BONUS_VS_SPECIFIC_ALIGNEMENT   = "ITEM_PROPERTY_ENHANCEMENT_BONUS_VS_SPECIFIC_ALIGNEMENT";
+const string SET_PROPERTY_TYPE_EXTRA_MELEE_DAMAGE_TYPE                    = "ITEM_PROPERTY_EXTRA_MELEE_DAMAGE_TYPE";
+const string SET_PROPERTY_TYPE_EXTRA_RANGED_DAMAGE_TYPE                   = "ITEM_PROPERTY_EXTRA_RANGED_DAMAGE_TYPE";
+const string SET_PROPERTY_TYPE_FREEDOM_OF_MOVEMENT                        = "ITEM_PROPERTY_FREEDOM_OF_MOVEMENT";
+const string SET_PROPERTY_TYPE_HASTE                                      = "ITEM_PROPERTY_HASTE";
+const string SET_PROPERTY_TYPE_HEALERS_KIT                                = "ITEM_PROPERTY_HEALERS_KIT";
+const string SET_PROPERTY_TYPE_HOLY_AVENGER                               = "ITEM_PROPERTY_HOLY_AVENGER";
+const string SET_PROPERTY_TYPE_IMMUNITY_DAMAGE_TYPE                       = "ITEM_PROPERTY_IMMUNITY_DAMAGE_TYPE";
+const string SET_PROPERTY_TYPE_IMMUNITY_MISCELLANEOUS                     = "ITEM_PROPERTY_IMMUNITY_MISCELLANEOUS";
+const string SET_PROPERTY_TYPE_IMMUNITY_SPECIFIC_SPELL                    = "ITEM_PROPERTY_IMMUNITY_SPECIFIC_SPELL";
+const string SET_PROPERTY_TYPE_IMMUNITY_SPELL_SCHOOL                      = "ITEM_PROPERTY_IMMUNITY_SPELL_SCHOOL";
+const string SET_PROPERTY_TYPE_IMMUNITY_SPELLS_BY_LEVEL                   = "ITEM_PROPERTY_IMMUNITY_SPELLS_BY_LEVEL";
+const string SET_PROPERTY_TYPE_IMPROVED_EVASION                           = "ITEM_PROPERTY_IMPROVED_EVASION";
+const string SET_PROPERTY_TYPE_KEEN                                       = "ITEM_PROPERTY_KEEN";
+const string SET_PROPERTY_TYPE_LIGHT                                      = "ITEM_PROPERTY_LIGHT";
+const string SET_PROPERTY_TYPE_MASSIVE_CRITICALS                          = "ITEM_PROPERTY_MASSIVE_CRITICALS";
+const string SET_PROPERTY_TYPE_MATERIAL                                   = "ITEM_PROPERTY_MATERIAL";
+const string SET_PROPERTY_TYPE_MIGHTY                                     = "ITEM_PROPERTY_MIGHTY";
+const string SET_PROPERTY_TYPE_MIND_BLANK                                 = "ITEM_PROPERTY_MIND_BLANK";
+const string SET_PROPERTY_TYPE_MONSTER_DAMAGE                             = "ITEM_PROPERTY_MONSTER_DAMAGE";
+const string SET_PROPERTY_TYPE_NO_DAMAGE                                  = "ITEM_PROPERTY_NO_DAMAGE";
+const string SET_PROPERTY_TYPE_ON_HIT_PROPERTIES                          = "ITEM_PROPERTY_ON_HIT_PROPERTIES";
+const string SET_PROPERTY_TYPE_ON_MONSTER_HIT                             = "ITEM_PROPERTY_ON_MONSTER_HIT";
+const string SET_PROPERTY_TYPE_ONHITCASTSPELL                             = "ITEM_PROPERTY_ONHITCASTSPELL";
+const string SET_PROPERTY_TYPE_POISON                                     = "ITEM_PROPERTY_POISON";
+const string SET_PROPERTY_TYPE_QUALITY                                    = "ITEM_PROPERTY_QUALITY";
+const string SET_PROPERTY_TYPE_REGENERATION                               = "ITEM_PROPERTY_REGENERATION";
+const string SET_PROPERTY_TYPE_REGENERATION_VAMPIRIC                      = "ITEM_PROPERTY_REGENERATION_VAMPIRIC";
+const string SET_PROPERTY_TYPE_SAVING_THROW_BONUS                         = "ITEM_PROPERTY_SAVING_THROW_BONUS";
+const string SET_PROPERTY_TYPE_SAVING_THROW_BONUS_SPECIFIC                = "ITEM_PROPERTY_SAVING_THROW_BONUS_SPECIFIC";
+const string SET_PROPERTY_TYPE_SKILL_BONUS                                = "ITEM_PROPERTY_SKILL_BONUS";
+const string SET_PROPERTY_TYPE_SPECIAL_WALK                               = "ITEM_PROPERTY_SPECIAL_WALK";
+const string SET_PROPERTY_TYPE_SPELL_RESISTANCE                           = "ITEM_PROPERTY_SPELL_RESISTANCE";
+const string SET_PROPERTY_TYPE_THIEVES_TOOLS                              = "ITEM_PROPERTY_THIEVES_TOOLS";
+const string SET_PROPERTY_TYPE_TRAP                                       = "ITEM_PROPERTY_TRAP";
+const string SET_PROPERTY_TYPE_TRUE_SEEING                                = "ITEM_PROPERTY_TRUE_SEEING";
+const string SET_PROPERTY_TYPE_TURN_RESISTANCE                            = "ITEM_PROPERTY_TURN_RESISTANCE";
+const string SET_PROPERTY_TYPE_UNLIMITED_AMMUNITION                       = "ITEM_PROPERTY_UNLIMITED_AMMUNITION";
+const string SET_PROPERTY_TYPE_USE_LIMITATION_ALIGNMENT_GROUP             = "ITEM_PROPERTY_USE_LIMITATION_ALIGNMENT_GROUP";
+const string SET_PROPERTY_TYPE_USE_LIMITATION_CLASS                       = "ITEM_PROPERTY_USE_LIMITATION_CLASS";
+const string SET_PROPERTY_TYPE_USE_LIMITATION_RACIAL_TYPE                 = "ITEM_PROPERTY_USE_LIMITATION_RACIAL_TYPE";
+const string SET_PROPERTY_TYPE_USE_LIMITATION_SPECIFIC_ALIGNMENT          = "ITEM_PROPERTY_USE_LIMITATION_SPECIFIC_ALIGNMENT";
+const string SET_PROPERTY_TYPE_USE_LIMITATION_TILESET                     = "ITEM_PROPERTY_USE_LIMITATION_TILESET";
+const string SET_PROPERTY_TYPE_VISUALEFFECT                               = "ITEM_PROPERTY_VISUALEFFECT";
+const string SET_PROPERTY_TYPE_WEIGHT_INCREASE                            = "ITEM_PROPERTY_WEIGHT_INCREASE";
 
-// ItemSetTagTokenizer is used to loop over all the SET_TAG_# props on an item oItem. 
+// ItemSetTagTokenizer is used to loop over all the SET_TAG_# props on an item oItem.
 struct ItemSetTagTokenizer {
     object oItem;
     int iSetTagIndex;
@@ -168,6 +168,8 @@ struct SetItemPropArguments GetItemPropArgumentsThreeArgs(
     string sSetBonusArgTwoSuffix,
     string sSetBonusArgThreeSuffix = "_VALUE"
 );
+
+int GetReplaceOrAddProp(object oItem, string sSetBonusPrefix);
 
 void RedoSetItemBonuses(object oItem, string sSetTag, int iSetItemsEquiped);  //Redo the set bonus sSetTag on a single item oItem to the level iSetItemsEquiped
 void RedoEquipedSetItemsBonuses(struct EquipedItems equipedItems, string sSetTag, int iSetItemsCount); //Redo the set bounus sSetTag on all equiped items.
@@ -368,7 +370,7 @@ struct ItemSetTagTokenizer GetFirstSetTag(object oItem)
     tknizr.oItem = oItem;
     tknizr.iSetTagIndex = 0;
     tknizr = GetNextSetTag(tknizr);
-    return tknizr;    
+    return tknizr;
 }
 
 // EEEE  QQQ   U   U III PPPP  EEEE DDD      III TTTTTT EEEE M   M     U   U TTTTTT III L     SSS
@@ -630,6 +632,11 @@ struct SetItemPropArguments GetItemPropArgumentsThreeArgs(
     return args;
 }
 
+int GetReplaceOrAddProp(object oItem, string sSetBonusPrefix)
+{
+    return GetLocalInt(oItem, sSetBonusPrefix + "_REPLACE");
+}
+
 // RRRR         d      SSS       t  BBBB                                 ff                 t
 // R   R        d     S          t  B   B                                f                  t  ii
 // RRRR  eee  ddd ooo  SSS  eee ttt BBBB  ooo nnn  u  u  ss eee  ss     fff u  u nnn   ccc ttt    ooo nnn   ss
@@ -676,6 +683,8 @@ void RedoSetItemBonuses(object oItem, string sSetTag, int iSetItemsEquiped)
             oItem,
             sSetBonusPrefix + "_MIN_SET_ITEMS"
         );
+
+        int iAllowMultipleProps = FALSE; //Set this to true to use AddItemProperty instead of IPSafeAddItemProp in cases where more than one prop of a type can be added to an item, such as bonus spell slots.
         if(iSetItemsEquiped >= iSetBounsMinSetItems){
             itemproperty ipNewBonus;
             int iSetPropertyBonusType = GetItemPropertyConstFromSetPropertyType(sSetPropertyBounsType);
@@ -749,6 +758,8 @@ void RedoSetItemBonuses(object oItem, string sSetTag, int iSetItemsEquiped)
                         ),
                         sSetBonusPrefix
                     );
+                   if(!GetReplaceOrAddProp(oItem, sSetBonusPrefix))
+                        iAllowMultipleProps = TRUE;
                 break;
 
 
@@ -773,6 +784,8 @@ void RedoSetItemBonuses(object oItem, string sSetTag, int iSetItemsEquiped)
                         ),
                         sSetBonusPrefix
                     );
+                   if(!GetReplaceOrAddProp(oItem, sSetBonusPrefix))
+                        iAllowMultipleProps = TRUE;
                 break;
 
 
@@ -797,6 +810,8 @@ void RedoSetItemBonuses(object oItem, string sSetTag, int iSetItemsEquiped)
                         ),
                         sSetBonusPrefix
                     );
+                   if(!GetReplaceOrAddProp(oItem, sSetBonusPrefix))
+                        iAllowMultipleProps = TRUE;
                 break;
 
 
@@ -821,6 +836,8 @@ void RedoSetItemBonuses(object oItem, string sSetTag, int iSetItemsEquiped)
                         ),
                         sSetBonusPrefix
                     );
+                   if(!GetReplaceOrAddProp(oItem, sSetBonusPrefix))
+                        iAllowMultipleProps = TRUE;
                 break;
 
                 case ITEM_PROPERTY_ADDITIONAL :
@@ -902,6 +919,8 @@ void RedoSetItemBonuses(object oItem, string sSetTag, int iSetItemsEquiped)
                         ),
                         sSetBonusPrefix
                     );
+                   if(!GetReplaceOrAddProp(oItem, sSetBonusPrefix))
+                        iAllowMultipleProps = TRUE;
                 break;
 
                 case ITEM_PROPERTY_ATTACK_BONUS_VS_RACIAL_GROUP :
@@ -925,6 +944,8 @@ void RedoSetItemBonuses(object oItem, string sSetTag, int iSetItemsEquiped)
                         ),
                         sSetBonusPrefix
                     );
+                   if(!GetReplaceOrAddProp(oItem, sSetBonusPrefix))
+                        iAllowMultipleProps = TRUE;
                 break;
 
                 case ITEM_PROPERTY_ATTACK_BONUS_VS_SPECIFIC_ALIGNMENT :
@@ -948,6 +969,8 @@ void RedoSetItemBonuses(object oItem, string sSetTag, int iSetItemsEquiped)
                         ),
                         sSetBonusPrefix
                     );
+                   if(!GetReplaceOrAddProp(oItem, sSetBonusPrefix))
+                        iAllowMultipleProps = TRUE;
                 break;
 
                 case ITEM_PROPERTY_BASE_ITEM_WEIGHT_REDUCTION :
@@ -986,6 +1009,8 @@ void RedoSetItemBonuses(object oItem, string sSetTag, int iSetItemsEquiped)
                         ),
                         sSetBonusPrefix
                     );
+                   if(!GetReplaceOrAddProp(oItem, sSetBonusPrefix))
+                        iAllowMultipleProps = TRUE;
                 break;
 
                 case ITEM_PROPERTY_BONUS_SPELL_SLOT_OF_LEVEL_N :
@@ -1009,6 +1034,8 @@ void RedoSetItemBonuses(object oItem, string sSetTag, int iSetItemsEquiped)
                         ),
                         sSetBonusPrefix
                     );
+                   if(!GetReplaceOrAddProp(oItem, sSetBonusPrefix))
+                        iAllowMultipleProps = TRUE;
                 break;
 
                 case ITEM_PROPERTY_CAST_SPELL :
@@ -1032,6 +1059,8 @@ void RedoSetItemBonuses(object oItem, string sSetTag, int iSetItemsEquiped)
                         ),
                         sSetBonusPrefix
                     );
+                   if(!GetReplaceOrAddProp(oItem, sSetBonusPrefix))
+                        iAllowMultipleProps = TRUE;
                 break;
 
                 case ITEM_PROPERTY_DAMAGE_BONUS :
@@ -1055,6 +1084,8 @@ void RedoSetItemBonuses(object oItem, string sSetTag, int iSetItemsEquiped)
                         ),
                         sSetBonusPrefix
                     );
+                   if(!GetReplaceOrAddProp(oItem, sSetBonusPrefix))
+                        iAllowMultipleProps = TRUE;
                 break;
 
                 case ITEM_PROPERTY_DAMAGE_BONUS_VS_ALIGNMENT_GROUP :
@@ -1082,6 +1113,8 @@ void RedoSetItemBonuses(object oItem, string sSetTag, int iSetItemsEquiped)
                         ),
                         sSetBonusPrefix
                     );
+                   if(!GetReplaceOrAddProp(oItem, sSetBonusPrefix))
+                        iAllowMultipleProps = TRUE;
                 break;
 
                 case ITEM_PROPERTY_DAMAGE_BONUS_VS_RACIAL_GROUP :
@@ -1109,6 +1142,8 @@ void RedoSetItemBonuses(object oItem, string sSetTag, int iSetItemsEquiped)
                         ),
                         sSetBonusPrefix
                     );
+                   if(!GetReplaceOrAddProp(oItem, sSetBonusPrefix))
+                        iAllowMultipleProps = TRUE;
                 break;
 
                 case ITEM_PROPERTY_DAMAGE_BONUS_VS_SPECIFIC_ALIGNMENT :
@@ -1136,6 +1171,8 @@ void RedoSetItemBonuses(object oItem, string sSetTag, int iSetItemsEquiped)
                         ),
                         sSetBonusPrefix
                     );
+                   if(!GetReplaceOrAddProp(oItem, sSetBonusPrefix))
+                        iAllowMultipleProps = TRUE;
                 break;
 
                 case ITEM_PROPERTY_DAMAGE_REDUCTION :
@@ -1182,6 +1219,8 @@ void RedoSetItemBonuses(object oItem, string sSetTag, int iSetItemsEquiped)
                         ),
                         sSetBonusPrefix
                     );
+                   if(!GetReplaceOrAddProp(oItem, sSetBonusPrefix))
+                        iAllowMultipleProps = TRUE;
                 break;
 
                 case ITEM_PROPERTY_DAMAGE_VULNERABILITY :
@@ -1205,6 +1244,8 @@ void RedoSetItemBonuses(object oItem, string sSetTag, int iSetItemsEquiped)
                         ),
                         sSetBonusPrefix
                     );
+                   if(!GetReplaceOrAddProp(oItem, sSetBonusPrefix))
+                        iAllowMultipleProps = TRUE;
                 break;
 
                 case ITEM_PROPERTY_DARKVISION :
@@ -1236,6 +1277,8 @@ void RedoSetItemBonuses(object oItem, string sSetTag, int iSetItemsEquiped)
                         ),
                         sSetBonusPrefix
                     );
+                   if(!GetReplaceOrAddProp(oItem, sSetBonusPrefix))
+                        iAllowMultipleProps = TRUE;
                 break;
 
                 case ITEM_PROPERTY_DECREASED_AC :
@@ -1339,6 +1382,8 @@ void RedoSetItemBonuses(object oItem, string sSetTag, int iSetItemsEquiped)
                         ),
                         sSetBonusPrefix
                     );
+                   if(!GetReplaceOrAddProp(oItem, sSetBonusPrefix))
+                        iAllowMultipleProps = TRUE;
                 break;
 
                 case ITEM_PROPERTY_DECREASED_SAVING_THROWS_SPECIFIC :
@@ -1362,6 +1407,8 @@ void RedoSetItemBonuses(object oItem, string sSetTag, int iSetItemsEquiped)
                         ),
                         sSetBonusPrefix
                     );
+                   if(!GetReplaceOrAddProp(oItem, sSetBonusPrefix))
+                        iAllowMultipleProps = TRUE;
                 break;
 
                 case ITEM_PROPERTY_DECREASED_SKILL_MODIFIER :
@@ -1385,6 +1432,8 @@ void RedoSetItemBonuses(object oItem, string sSetTag, int iSetItemsEquiped)
                         ),
                         sSetBonusPrefix
                     );
+                   if(!GetReplaceOrAddProp(oItem, sSetBonusPrefix))
+                        iAllowMultipleProps = TRUE;
                 break;
 
                 case ITEM_PROPERTY_ENHANCED_CONTAINER_REDUCED_WEIGHT :
@@ -1446,6 +1495,8 @@ void RedoSetItemBonuses(object oItem, string sSetTag, int iSetItemsEquiped)
                         ),
                         sSetBonusPrefix
                     );
+                   if(!GetReplaceOrAddProp(oItem, sSetBonusPrefix))
+                        iAllowMultipleProps = TRUE;
                 break;
 
                 case ITEM_PROPERTY_ENHANCEMENT_BONUS_VS_RACIAL_GROUP :
@@ -1469,6 +1520,8 @@ void RedoSetItemBonuses(object oItem, string sSetTag, int iSetItemsEquiped)
                         ),
                         sSetBonusPrefix
                     );
+                   if(!GetReplaceOrAddProp(oItem, sSetBonusPrefix))
+                        iAllowMultipleProps = TRUE;
                 break;
 
                 case ITEM_PROPERTY_ENHANCEMENT_BONUS_VS_SPECIFIC_ALIGNEMENT :
@@ -1492,6 +1545,8 @@ void RedoSetItemBonuses(object oItem, string sSetTag, int iSetItemsEquiped)
                         ),
                         sSetBonusPrefix
                     );
+                   if(!GetReplaceOrAddProp(oItem, sSetBonusPrefix))
+                        iAllowMultipleProps = TRUE;
                 break;
 
                 case ITEM_PROPERTY_EXTRA_MELEE_DAMAGE_TYPE :
@@ -1511,6 +1566,8 @@ void RedoSetItemBonuses(object oItem, string sSetTag, int iSetItemsEquiped)
                         ),
                         sSetBonusPrefix
                     );
+                   if(!GetReplaceOrAddProp(oItem, sSetBonusPrefix))
+                        iAllowMultipleProps = TRUE;
                 break;
 
                 case ITEM_PROPERTY_EXTRA_RANGED_DAMAGE_TYPE :
@@ -1530,6 +1587,8 @@ void RedoSetItemBonuses(object oItem, string sSetTag, int iSetItemsEquiped)
                         ),
                         sSetBonusPrefix
                     );
+                   if(!GetReplaceOrAddProp(oItem, sSetBonusPrefix))
+                        iAllowMultipleProps = TRUE;
                 break;
 
                 case ITEM_PROPERTY_FREEDOM_OF_MOVEMENT :
@@ -1596,6 +1655,8 @@ void RedoSetItemBonuses(object oItem, string sSetTag, int iSetItemsEquiped)
                         ),
                         sSetBonusPrefix
                     );
+                   if(!GetReplaceOrAddProp(oItem, sSetBonusPrefix))
+                        iAllowMultipleProps = TRUE;
                 break;
 
                 case ITEM_PROPERTY_IMMUNITY_MISCELLANEOUS :
@@ -1615,6 +1676,8 @@ void RedoSetItemBonuses(object oItem, string sSetTag, int iSetItemsEquiped)
                         ),
                         sSetBonusPrefix
                     );
+                   if(!GetReplaceOrAddProp(oItem, sSetBonusPrefix))
+                        iAllowMultipleProps = TRUE;
                 break;
 
                 case ITEM_PROPERTY_IMMUNITY_SPECIFIC_SPELL :
@@ -1634,6 +1697,8 @@ void RedoSetItemBonuses(object oItem, string sSetTag, int iSetItemsEquiped)
                         ),
                         sSetBonusPrefix
                     );
+                   if(!GetReplaceOrAddProp(oItem, sSetBonusPrefix))
+                        iAllowMultipleProps = TRUE;
                 break;
 
                 case ITEM_PROPERTY_IMMUNITY_SPELL_SCHOOL :
@@ -1653,6 +1718,8 @@ void RedoSetItemBonuses(object oItem, string sSetTag, int iSetItemsEquiped)
                         ),
                         sSetBonusPrefix
                     );
+                   if(!GetReplaceOrAddProp(oItem, sSetBonusPrefix))
+                        iAllowMultipleProps = TRUE;
                 break;
 
                 case ITEM_PROPERTY_IMMUNITY_SPELLS_BY_LEVEL :
@@ -1672,6 +1739,8 @@ void RedoSetItemBonuses(object oItem, string sSetTag, int iSetItemsEquiped)
                         ),
                         sSetBonusPrefix
                     );
+                   if(!GetReplaceOrAddProp(oItem, sSetBonusPrefix))
+                        iAllowMultipleProps = TRUE;
                 break;
 
                 case ITEM_PROPERTY_IMPROVED_EVASION :
@@ -1826,6 +1895,8 @@ void RedoSetItemBonuses(object oItem, string sSetTag, int iSetItemsEquiped)
                         ),
                         sSetBonusPrefix
                     );
+                   if(!GetReplaceOrAddProp(oItem, sSetBonusPrefix))
+                        iAllowMultipleProps = TRUE;
                 break;
 
                 case ITEM_PROPERTY_ON_MONSTER_HIT :
@@ -1873,6 +1944,8 @@ void RedoSetItemBonuses(object oItem, string sSetTag, int iSetItemsEquiped)
                         ),
                         sSetBonusPrefix
                     );
+                   if(!GetReplaceOrAddProp(oItem, sSetBonusPrefix))
+                        iAllowMultipleProps = TRUE;
                 break;
 
                 case ITEM_PROPERTY_POISON :
@@ -1957,6 +2030,8 @@ void RedoSetItemBonuses(object oItem, string sSetTag, int iSetItemsEquiped)
                         ),
                         sSetBonusPrefix
                     );
+                   if(!GetReplaceOrAddProp(oItem, sSetBonusPrefix))
+                        iAllowMultipleProps = TRUE;
                 break;
 
                 case ITEM_PROPERTY_SAVING_THROW_BONUS_SPECIFIC :
@@ -1980,6 +2055,8 @@ void RedoSetItemBonuses(object oItem, string sSetTag, int iSetItemsEquiped)
                         ),
                         sSetBonusPrefix
                     );
+                   if(!GetReplaceOrAddProp(oItem, sSetBonusPrefix))
+                        iAllowMultipleProps = TRUE;
                 break;
 
                 case ITEM_PROPERTY_SKILL_BONUS :
@@ -2003,6 +2080,8 @@ void RedoSetItemBonuses(object oItem, string sSetTag, int iSetItemsEquiped)
                         ),
                         sSetBonusPrefix
                     );
+                   if(!GetReplaceOrAddProp(oItem, sSetBonusPrefix))
+                        iAllowMultipleProps = TRUE;
                 break;
 
                 case ITEM_PROPERTY_SPECIAL_WALK :
@@ -2148,6 +2227,8 @@ void RedoSetItemBonuses(object oItem, string sSetTag, int iSetItemsEquiped)
                         ),
                         sSetBonusPrefix
                     );
+                   if(!GetReplaceOrAddProp(oItem, sSetBonusPrefix))
+                        iAllowMultipleProps = TRUE;
                 break;
 
                 case ITEM_PROPERTY_USE_LIMITATION_CLASS :
@@ -2167,6 +2248,8 @@ void RedoSetItemBonuses(object oItem, string sSetTag, int iSetItemsEquiped)
                         ),
                         sSetBonusPrefix
                     );
+                   if(!GetReplaceOrAddProp(oItem, sSetBonusPrefix))
+                        iAllowMultipleProps = TRUE;
                 break;
 
                 case ITEM_PROPERTY_USE_LIMITATION_RACIAL_TYPE :
@@ -2186,6 +2269,8 @@ void RedoSetItemBonuses(object oItem, string sSetTag, int iSetItemsEquiped)
                         ),
                         sSetBonusPrefix
                     );
+                   if(!GetReplaceOrAddProp(oItem, sSetBonusPrefix))
+                        iAllowMultipleProps = TRUE;
                 break;
 
                 case ITEM_PROPERTY_USE_LIMITATION_SPECIFIC_ALIGNMENT :
@@ -2205,6 +2290,8 @@ void RedoSetItemBonuses(object oItem, string sSetTag, int iSetItemsEquiped)
                         ),
                         sSetBonusPrefix
                     );
+                   if(!GetReplaceOrAddProp(oItem, sSetBonusPrefix))
+                        iAllowMultipleProps = TRUE;
                 break;
 
                 case ITEM_PROPERTY_USE_LIMITATION_TILESET :
@@ -2252,10 +2339,18 @@ void RedoSetItemBonuses(object oItem, string sSetTag, int iSetItemsEquiped)
                 default:
                     error("Error! Set property Unrecognized: " + sSetPropertyBounsType);
             }
-            IPSafeAddItemProperty(
-                oItem,
-                ipNewBonus
-            );
+            if(iAllowMultipleProps){
+                AddItemProperty(
+                    DURATION_TYPE_PERMANENT,
+                    ipNewBonus,
+                    oItem
+                );
+            }else{
+                IPSafeAddItemProperty(
+                    oItem,
+                    ipNewBonus
+                );
+            }
         }else{
             itemproperty ipLoop = GetFirstItemProperty(oItem);
             while(GetIsItemPropertyValid(ipLoop)){
