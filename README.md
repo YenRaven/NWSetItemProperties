@@ -743,3 +743,11 @@ This property lacks a constructor and thus cannot be used with this tool at this
 |_WEIGHT_INCREASE|**0 to 5**|[See IP_CONST_WEIGHTINCREASE_*](https://nwnlexicon.com/index.php?title=Ip_const_weightincrease) for possible *values*|
 
 
+
+#### CUSTOM_SET_BONUS
+| Special Prop | type | Description |
+|----|----|----|
+|_APPLY_SCRIPT|`string`|The custom script to execute on the player who just equipped the last item that brought them over the min set items level.|
+|_REMOVE_SCRIPT|`string`|The custom script to execute on the player who just un-equipped the last item that brought them under the min set items level.|
+
+
