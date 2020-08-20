@@ -21,7 +21,7 @@ void main()
 ```
 
 # How to use
-Now that you have the set scripts installed, you can use the item properties dialog to setup set item bonuses!
+Now that you have the set scripts installed, you can use the item properties dialog to set item bonuses!
 You can find the variables button for items under the description tab of the item properties window, in the bottom right.
 ![Capture of example properties](ItemPropsVariablesButton.PNG)
 
@@ -30,15 +30,15 @@ To create your first set, add the following variables to all the items of your s
 |----|----|----|
 |SET_TAG_0|`string`|*[YourSetTag]*|
 
-Now as a player equips these various items, the game will count up all of their currently equiped items that belong to that set and use that count to determin a set bonus level to apply to all of the items.
+Now as a player equips these various items, the game will count up all of their currently equipped items that belong to that set and use that count to determine a set bonus level to apply to all of the items.
 
-Lets create our first set bonus to apply to one of your set items!  Set bonuses are defined with the `SET_TAG_0_BONUS_#` prefix and must include the following to be valid
+Let's create our first set bonus to apply to one of your set items!  Set bonuses are defined with the `SET_TAG_0_BONUS_#` prefix and must include the following to be valid
 |Suffix|Type|Description|
 |----|----|----|
-|\_TYPE|`string`| Any of the `ITEM_PROPERTY_*` constants names.  You can find a list of these at https://nwnlexicon.com/index.php?title=Item_property|
-|\_MIN_SET_ITEMS|`int`| The minimum number of items belonging to this set that must be equiped to apply this bonus.|
+|\_TYPE|`string`| Any of the `ITEM_PROPERTY_*` constant names.  You can find a list of these at https://nwnlexicon.com/index.php?title=Item_property|
+|\_MIN_SET_ITEMS|`int`| The minimum number of items belonging to this set that must be equipped to apply this bonus.|
 
-So lets add an omnious red glow that will only show up when the user has two items belonging to the set equiped. We start by adding our `ITEM_PROPERTY_LIGHT` type for the first bonus (0 indexed) and set this property to be applied when the user has put on two set items.  Now your items variables should look something like this (with replacements where appropriate).
+So let's add an ominous red glow that will only show up when the user has two items belonging to the set equipped. We start by adding our `ITEM_PROPERTY_LIGHT` type for the first bonus (0 indexed) and set this property to be applied when the user has put on two set items.  Now your items variables should look something like this (with replacements where appropriate).
 
 |Name|Type|Value|
 |----|----|----|
@@ -46,7 +46,7 @@ So lets add an omnious red glow that will only show up when the user has two ite
 |SET_TAG_0_BONUS_0_TYPE|`string`|ITEM_PROPERTY_LIGHT|
 |SET_TAG_0_BONUS_0_MIN_SET_ITEMS|`int`|2|
 
-This instructs the script to apply the `ITEM_PROPERTY_LIGHT` effect to **this** piece of equipment when 2 or more set items are equiped.  However there are a couple more things we need.  The engine needs to know how bright the light needs to be and what color.  These are special props for this effect type.  Almost all effect types require a set of special props to define the properties of the effect.  These differ for each effect. Information on which effects require which special props can be found below. For `ITEM_PROPERTY_LIGHT` the two speical props are `_LIGHT` and `_COLOR`.  All special props are defeind as ints and will throw an error in your chat window if an int outside the property range is provided.  We want a dim light, witch is value 1, and a red light, witch is value 3.  Adding these, our final set of variables should be this.
+This instructs the script to apply the `ITEM_PROPERTY_LIGHT` effect to **this** piece of equipment when 2 or more set items are equipped.  However there are a couple more things we need.  The engine needs to know how bright the light needs to be and what color.  These are special props for this effect type.  Almost all effect types require a set of special props to define the properties of the effect.  These differ for each effect. Information on which effects require which special props can be found below. For `ITEM_PROPERTY_LIGHT` the two special props are `_LIGHT` and `_COLOR`.  All special props are defined as ints and will throw an error in your chat window if an int outside the property range is provided.  We want a dim light, which is value 1, and a red light, which is value 3.  Adding these, our final set of variables should be this.
 
 |Name|Type|Value|
 |----|----|----|
@@ -56,16 +56,16 @@ This instructs the script to apply the `ITEM_PROPERTY_LIGHT` effect to **this** 
 |SET_TAG_0_BONUS_0_LIGHT|`int`|1|
 |SET_TAG_0_BONUS_0_COLOR|`int`|3|
 
-And thats it!  Now when this item is equiped with another item with the same set tag, an extra property applying a dim red glow will be applied!  And when any item belonging to the set is unequiped, bringing the set bonus below the min set items for this prop, it will be removed!
+And that's it!  Now when this item is equipped with another item with the same set tag, an extra property applying a dim red glow will be applied!  And when any item belonging to the set is un-equipped, bringing the set bonus below the min set items for this prop, it will be removed!
 
-Note that set item bonuses will only work on player characters, not npcs or monsters.  If you want to have a character wearing the set that will drop when defeated, I'd recommend useing a custom creature skin to simulate the set effects on the npc.
+Note that set item bonuses will only work on player characters, not npcs or monsters.  If you want to have a character wearing the set that will drop when defeated, I'd recommend using a custom creature skin to simulate the set effects on the npc.
 
-One last point,  the numeric parts of the variable name template are 0 indexed and sequencial so to add the same item to another set, you would use the prefix `SET_TAG_1` or to add a new set bonus `_BONUS_1`.  Combinations of these can be used to setup multi set bonuses and to setup teird bonuses to be applied as a person aquires more and more set items!  Experiment and have fun (and report bugs here on github when you run into them)!
+One last point,  the numeric parts of the variable name template are 0 indexed and sequential so to add the same item to another set, you would use the prefix `SET_TAG_1` or to add a new set bonus `_BONUS_1`.  Combinations of these can be used to set up multi set bonuses and to set up tiered bonuses to be applied as a person acquires more and more set items!  Experiment and have fun (and report bugs here on github when you run into them)!
 
 # Examples
 
 ## Incremental set bonuses on one item
-This is a set that will apply bonus fire damage to the weapon when 2 set items are equiped and increased enhancement when a 3rd set item is equiped.
+This is a set that will apply bonus fire damage to the weapon when 2 set items are equipped and increased enhancement when a 3rd set item is equipped.
 
 #### Weapon Variables
 |Name|Type|Value|
@@ -84,8 +84,8 @@ This is a set that will apply bonus fire damage to the weapon when 2 set items a
 |----|----|----|
 |SET_TAG_0|`string`|FIRE_SET|
 
-## Increasng weapon enhancement bonus for each set item equiped.
-This set will apply an extra +1 enhancement to the weapon for each set item equiped up to +5
+## Increasing weapon enhancement bonus for each set item equipped.
+This set will apply an extra +1 enhancement to the weapon for each set item equipped up to +5
 
 #### Weapon Variables
 |Name|Type|Value|
@@ -112,10 +112,10 @@ This set will apply an extra +1 enhancement to the weapon for each set item equi
 |----|----|----|
 |SET_TAG_0|`string`|ENHANCEMENT_SET|
 
-## Armor, helm, and wepon set where the weapon is nerfed if equiped with the helm.
-This set will give a +10 enhancement bonus to the weapon and a +5 AC bonus when the weapon and armor are equiped.
-It will give a +5 AC bonus the the helm and a +5 Regeneration to the armor when both the armor and helm are equiped.
-But it will give a -5 Decreased enhancement bonus to the weapon if the weapon and the helm are equiped at the same time.
+## Armor, helm, and weapon set where the weapon is nerfed if equipped with the helm.
+This set will give a +10 enhancement bonus to the weapon and a +5 AC bonus when the weapon and armor are equipped.
+It will give a +5 AC bonus to the helm and a +5 Regeneration to the armor when both the armor and helm are equipped.
+But it will give a -5 Decreased enhancement bonus to the weapon if the weapon and the helm are equipped at the same time.
 
 #### Weapon Variables
 |Name|Type|Value|
@@ -158,22 +158,22 @@ The prefix is the set tag variable name and is structured like so:
 `SET_TAG_#` where the # is a number starting at 0 and incrementing by 1 for each set tag applied to the item.  In this way you can have one item that belongs to several sets.
 
 The infix is the Bonus identifying part of the variable and is structured like so:
-`_BONUS_#` where the # is another number starting at 0 and incrementing by 1 for each bonus that should be applied as part of this set to **this** item.  By icrementing the number, you can apply several bonuses to one item under various conditions.
+`_BONUS_#` where the # is another number starting at 0 and incrementing by 1 for each bonus that should be applied as part of this set to **this** item.  By incrementing the number, you can apply several bonuses to one item under various conditions.
 
-The suffix is the properties of the bonus to be applied and is structured in various ways depending on what property is to be applied but all bonuses must have the following property suffixs supplied.
+The suffix is the property of the bonus to be applied and is structured in various ways depending on what property is to be applied but all bonuses must have the following property suffixes supplied.
 
-1. `_TYPE` to specify the **ITEM_PROPERTY_** value that will determin the effect of the bonus.
-2. `_MIN_SET_ITEMS` to specify the minimum number of items of the set that must be equiped in order to recieve the bonus
+1. `_TYPE` to specify the **ITEM_PROPERTY_** value that will determine the effect of the bonus.
+2. `_MIN_SET_ITEMS` to specify the minimum number of items of the set that must be equipped in order to receive the bonus
 
-Another prop suffix that can be applied is the `_REPLACE` suffix.  This is a special prop that augments how properties are applied to an item.  Some item props are able to be applied over and over.  For example Bonuse spell slots.  You can apply several of these as a set bonus at one time, however it may be that you intend for a future application of the property to replace the prio ones, for example if you have more set items equiped, you may want to increase the range of the bonus spell slots.  the `_REPLACE` flag will cause the bonus that is is assigned to to remove all prior instances of that bonus from the item before applying itself.
+Another prop suffix that can be applied is the `_REPLACE` suffix.  This is a special prop that augments how properties are applied to an item.  Some item props are able to be applied over and over.  For example Bonus spell slots.  You can apply several of these as a set bonus at one time, however it may be that you intend for a future application of the property to replace the prio ones, for example if you have more set items equipped, you may want to increase the range of the bonus spell slots.  The `_REPLACE` flag will cause the bonus that is assigned to to remove all prior instances of that bonus from the item before applying itself.
 
-All the other suffixs are detailed below.
+All the other suffixes are detailed below.
 
 # Special Properties
 
 The following information is auto generated from the code.  Until I can go through and flush out the various descriptions and such, you can find more info about the special props by going to https://nwnlexicon.com/index.php?title=Item_property and following the link to the various **IP Functions** for the ITEM_PROPERTY you are looking for.
 
-These properties are applied to **the item on which they are defined** always.  So you cant give a weapon an enhancement bonus by applying that bonus to the armor of the set or something like that.  The nature of these bonses can cause them to do different things on different base item types.  For example, on armor ONHITCASTSPELL causes the selected spell to be cast when the player is hit.  While on a weapon it causes the spell to be cast when the player hits something with the weapon.
+These properties are applied to **the item on which they are defined** always.  So you can't give a weapon an enhancement bonus by applying that bonus to the armor of the set or something like that.  The nature of these bonuses can cause them to do different things on different base item types.  For example, on armor ONHITCASTSPELL causes the selected spell to be cast when the player is hit.  While on a weapon it causes the spell to be cast when the player hits something with the weapon.
 
 #### ITEM_PROPERTY_ABILITY_BONUS
 | Special Prop | Range | Description |
@@ -553,7 +553,7 @@ These properties are applied to **the item on which they are defined** always.  
 
 
 #### ITEM_PROPERTY_MIND_BLANK
-This property is missing it's constructor and thus is unavailabe via this toolset at this time.
+This property is missing it's constructor and thus is unavailable via this toolset at this time.
 | Special Prop | Range | Description |
 |----|----|----|
 
@@ -582,7 +582,7 @@ This property is missing it's constructor and thus is unavailabe via this toolse
 |_SPECIAL|**0 to 255**|[See ItemPropertyOnHitProps](https://nwnlexicon.com/index.php?title=ItemPropertyOnHitProps#Description) for details on this property.|
 
 #### ITEM_PROPERTY_ON_MONSTER_HIT
-This property has know bugs in it's constructor.  [See ItemPropertyOnMonsterHitProperties](https://nwnlexicon.com/index.php?title=ItemPropertyOnMonsterHitProperties) for more information.
+This property has known bugs in it's constructor.  [See ItemPropertyOnMonsterHitProperties](https://nwnlexicon.com/index.php?title=ItemPropertyOnMonsterHitProperties) for more information.
 | Special Prop | Range | Description |
 |----|----|----|
 |_ON_MONSTER_HIT|**0 to 9**|[See IP_CONST_ONMONSTERHIT_*](https://nwnlexicon.com/index.php?title=Ip_const_onmonsterhit) for possible *values*|
@@ -741,3 +741,5 @@ This property lacks a constructor and thus cannot be used with this tool at this
 | Special Prop | Range | Description |
 |----|----|----|
 |_WEIGHT_INCREASE|**0 to 5**|[See IP_CONST_WEIGHTINCREASE_*](https://nwnlexicon.com/index.php?title=Ip_const_weightincrease) for possible *values*|
+
+
