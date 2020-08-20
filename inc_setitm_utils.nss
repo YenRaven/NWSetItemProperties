@@ -1,6 +1,8 @@
 #include "inc_loglevel"
 #include "x2_inc_itemprop"
 
+const int CUSTOM_SET_BONUS = 100000; //Space this value out so it wont conflict with future patches.
+
 //Consts for the translation of ITEM_PROPERTY_* const names into their value.  So these can be defined by name in item prop variables instead of ints.
 const string SET_PROPERTY_TYPE_ABILITY_BONUS                              = "ITEM_PROPERTY_ABILITY_BONUS";
 const string SET_PROPERTY_TYPE_AC_BONUS                                   = "ITEM_PROPERTY_AC_BONUS";
@@ -83,7 +85,7 @@ const string SET_PROPERTY_TYPE_USE_LIMITATION_SPECIFIC_ALIGNMENT          = "ITE
 const string SET_PROPERTY_TYPE_USE_LIMITATION_TILESET                     = "ITEM_PROPERTY_USE_LIMITATION_TILESET";
 const string SET_PROPERTY_TYPE_VISUALEFFECT                               = "ITEM_PROPERTY_VISUALEFFECT";
 const string SET_PROPERTY_TYPE_WEIGHT_INCREASE                            = "ITEM_PROPERTY_WEIGHT_INCREASE";
-
+const string SET_PROPERTY_TYPE_CUSTOM                                     = "CUSTOM_SET_BONUS";
 // ItemSetTagTokenizer is used to loop over all the SET_TAG_# props on an item oItem.
 struct ItemSetTagTokenizer {
     object oItem;
@@ -339,6 +341,8 @@ int GetItemPropertyConstFromSetPropertyType(string sSetPropertyType)
         return ITEM_PROPERTY_VISUALEFFECT;
     if (SET_PROPERTY_TYPE_WEIGHT_INCREASE == sSetPropertyType)
         return ITEM_PROPERTY_WEIGHT_INCREASE;
+    if (SET_PROPERTY_TYPE_CUSTOM == sSetPropertyType)
+        return CUSTOM_SET_BONUS;
     return -1;
 }
 
@@ -683,7 +687,14 @@ void RedoSetItemBonuses(object oItem, string sSetTag, int iSetItemsEquiped)
             oItem,
             sSetBonusPrefix + "_MIN_SET_ITEMS"
         );
-
+        string sCustomSetBonusApplyScript = GetLocalString(
+            oItem,
+            sSetBonusPrefix + "_APPLY_SCRIPT"
+        );
+        string sCustomSetBonusRemoveScript = GetLocalString(
+            oItem,
+            sSetBonusPrefix + "_REMOVE_SCRIPT"
+        );
         int iAllowMultipleProps = FALSE; //Set this to true to use AddItemProperty instead of IPSafeAddItemProp in cases where more than one prop of a type can be added to an item, such as bonus spell slots.
         int iIgnoreSubType = FALSE;
         if(iSetItemsEquiped >= iSetBounsMinSetItems){
@@ -2335,33 +2346,43 @@ void RedoSetItemBonuses(object oItem, string sSetTag, int iSetItemsEquiped)
                         sSetBonusPrefix
                     );
                 break;
+                case CUSTOM_SET_BONUS:
+                    //Execute custom script on bonus applied.
+                    ExecuteScript(sCustomSetBonusApplyScript, GetPCItemLastEquippedBy());
+                break;
 
                 default:
                     error("Error! Set property Unrecognized: " + sSetPropertyBounsType);
             }
             
-            debug("ITEM PROPERTY TYPE:" + IntToString(GetItemPropertyType(ipNewBonus)));
-            debug("ITEM PROPERTY SUB TYPE:" + IntToString(GetItemPropertySubType(ipNewBonus)));
-            if(iAllowMultipleProps){
-                IPSafeAddItemProperty(
-                    oItem,
-                    ipNewBonus,
-                    0.0,
-                    X2_IP_ADDPROP_POLICY_IGNORE_EXISTING,
-                    FALSE,
-                    iIgnoreSubType
-                );
-            }else{
-                IPSafeAddItemProperty(
-                    oItem,
-                    ipNewBonus,
-                    0.0,
-                    X2_IP_ADDPROP_POLICY_REPLACE_EXISTING,
-                    FALSE,
-                    iIgnoreSubType
-                );
+            if(GetIsItemPropertyValid(ipNewBonus)){  //Test for Custom prop applied or error.
+                debug("ITEM PROPERTY TYPE:" + IntToString(GetItemPropertyType(ipNewBonus)));
+                debug("ITEM PROPERTY SUB TYPE:" + IntToString(GetItemPropertySubType(ipNewBonus)));
+                if(iAllowMultipleProps){
+                    IPSafeAddItemProperty(
+                        oItem,
+                        ipNewBonus,
+                        0.0,
+                        X2_IP_ADDPROP_POLICY_IGNORE_EXISTING,
+                        FALSE,
+                        iIgnoreSubType
+                    );
+                }else{
+                    IPSafeAddItemProperty(
+                        oItem,
+                        ipNewBonus,
+                        0.0,
+                        X2_IP_ADDPROP_POLICY_REPLACE_EXISTING,
+                        FALSE,
+                        iIgnoreSubType
+                    );
+                }
             }
         }else{
+            if(sCustomSetBonusRemoveScript != ""){
+                //If there is a custom bonus remove script for this tag, then run it first.
+                ExecuteScript(sCustomSetBonusRemoveScript, GetPCItemLastUnequippedBy());
+            }
             itemproperty ipLoop = GetFirstItemProperty(oItem);
             while(GetIsItemPropertyValid(ipLoop)){
                 if(GetItemPropertyTag(ipLoop) == sSetBonusPrefix){
