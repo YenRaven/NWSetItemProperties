@@ -2358,24 +2358,37 @@ void RedoSetItemBonuses(object oItem, string sSetTag, int iSetItemsEquiped)
             if(GetIsItemPropertyValid(ipNewBonus)){  //Test for Custom prop applied or error.
                 debug("ITEM PROPERTY TYPE:" + IntToString(GetItemPropertyType(ipNewBonus)));
                 debug("ITEM PROPERTY SUB TYPE:" + IntToString(GetItemPropertySubType(ipNewBonus)));
-                if(iAllowMultipleProps){
-                    IPSafeAddItemProperty(
-                        oItem,
-                        ipNewBonus,
-                        0.0,
-                        X2_IP_ADDPROP_POLICY_IGNORE_EXISTING,
-                        FALSE,
-                        iIgnoreSubType
-                    );
-                }else{
-                    IPSafeAddItemProperty(
-                        oItem,
-                        ipNewBonus,
-                        0.0,
-                        X2_IP_ADDPROP_POLICY_REPLACE_EXISTING,
-                        FALSE,
-                        iIgnoreSubType
-                    );
+                
+                int iAlreadyApplied;
+                itemproperty ipLoop = GetFirstItemProperty(oItem);
+                while(GetIsItemPropertyValid(ipLoop)){
+                    if(GetItemPropertyTag(ipLoop) == sSetBonusPrefix){
+                        iAlreadyApplied = TRUE;
+                        break;
+                    }
+
+                    ipLoop = GetNextItemProperty(oItem);
+                }
+                if(!iAlreadyApplied){
+                    if(iAllowMultipleProps){
+                        IPSafeAddItemProperty(
+                            oItem,
+                            ipNewBonus,
+                            0.0,
+                            X2_IP_ADDPROP_POLICY_IGNORE_EXISTING,
+                            FALSE,
+                            iIgnoreSubType
+                        );
+                    }else{
+                        IPSafeAddItemProperty(
+                            oItem,
+                            ipNewBonus,
+                            0.0,
+                            X2_IP_ADDPROP_POLICY_REPLACE_EXISTING,
+                            FALSE,
+                            iIgnoreSubType
+                        );
+                    }
                 }
             }
         }else{
